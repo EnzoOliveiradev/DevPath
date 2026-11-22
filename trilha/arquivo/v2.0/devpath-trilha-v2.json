@@ -1,0 +1,3187 @@
+{
+  "version": "2.0",
+  "published_on": "2026-11-22",
+  "purpose": "Raciocínio e leitura de código -> Full Stack e arquitetura -> AppSec/DevSecOps/cibersegurança. Pós em paralelo.",
+  "rules": {
+    "cadence": "5 sessões por semana, começar em 30–60 min; ampliar após duas semanas de constância.",
+    "study_cycle": [
+      "Predict",
+      "Run",
+      "Investigate",
+      "Modify",
+      "Make"
+    ],
+    "review": "Registrar recuperação de 0 a 5; revisão sugerida após 1, 3, 7 ou 14 dias conforme desempenho.",
+    "gate": "Checklist pedagógico: 80% de compreensão em trechos inéditos; recuperação >=4/5 após 48h; autonomia <=1; justificar decisões. Não é avaliação automática.",
+    "focus": "Prioridade para entregas reais da pós e revisões; em seguida próximo conteúdo liberado por pré-requisitos.",
+    "safety": "Apenas laboratório próprio ou explicitamente autorizado nas atividades de segurança."
+  },
+  "phases": [
+    {
+      "id": 1,
+      "title": "Raciocínio computacional e leitura de código",
+      "objective": "Interpretar programas simples, rastrear estado e descrever o fluxo sem ajuda",
+      "gate": "Ler dois trechos inéditos de 20–40 linhas e acertar pelo menos 8/10 critérios sem IA",
+      "topic_ids": [
+        "C01-01",
+        "C01-02",
+        "C01-03",
+        "C01-04",
+        "C01-05",
+        "C01-06",
+        "C01-07",
+        "C01-08",
+        "C01-09",
+        "C01-10"
+      ],
+      "checkpoint_id": "C01-10",
+      "prerequisite_checkpoint": null
+    },
+    {
+      "id": 2,
+      "title": "JavaScript essencial",
+      "objective": "Ler e escrever operações básicas sem depender de exemplos prontos",
+      "gate": "Implementar 4 funções sem IA e explicar como a execução altera os valores",
+      "topic_ids": [
+        "C02-01",
+        "C02-02",
+        "C02-03",
+        "C02-04",
+        "C02-05",
+        "C02-06",
+        "C02-07",
+        "C02-08",
+        "C02-09",
+        "C02-10"
+      ],
+      "checkpoint_id": "C02-10",
+      "prerequisite_checkpoint": "C01-10"
+    },
+    {
+      "id": 3,
+      "title": "JavaScript intermediário e debugging",
+      "objective": "Entender assincronismo e depurar aplicações sem depender da solução de IA",
+      "gate": "Explicar ordem de execução, capturar erros e isolar um bug reproduzível",
+      "topic_ids": [
+        "C03-01",
+        "C03-02",
+        "C03-03",
+        "C03-04",
+        "C03-05",
+        "C03-06",
+        "C03-07",
+        "C03-08",
+        "C03-09",
+        "C03-10"
+      ],
+      "checkpoint_id": "C03-10",
+      "prerequisite_checkpoint": "C02-10"
+    },
+    {
+      "id": 4,
+      "title": "Estruturas de dados, algoritmos e qualidade",
+      "objective": "Escolher estruturas, compreender custos e verificar comportamentos",
+      "gate": "Passar testes de correção e justificar complexidade e casos limites",
+      "topic_ids": [
+        "C04-01",
+        "C04-02",
+        "C04-03",
+        "C04-04",
+        "C04-05",
+        "C04-06",
+        "C04-07",
+        "C04-08",
+        "C04-09"
+      ],
+      "checkpoint_id": "C04-09",
+      "prerequisite_checkpoint": "C03-10"
+    },
+    {
+      "id": 5,
+      "title": "Ambiente profissional, Linux, Git, redes e HTTP",
+      "objective": "Entender o caminho da requisição desde sistema operacional até servidor",
+      "gate": "Diagnosticar conexão HTTP e publicar repositório com histórico claro",
+      "topic_ids": [
+        "C05-01",
+        "C05-02",
+        "C05-03",
+        "C05-04",
+        "C05-05",
+        "C05-06",
+        "C05-07",
+        "C05-08",
+        "C05-09",
+        "C05-10"
+      ],
+      "checkpoint_id": "C05-10",
+      "prerequisite_checkpoint": "C04-09"
+    },
+    {
+      "id": 6,
+      "title": "Backend Node.js e TypeScript",
+      "objective": "Construir e explicar APIs com autenticação, validação e tratamento de erros",
+      "gate": "Entregar uma API com testes e revisar sem ajuda um endpoint desconhecido",
+      "topic_ids": [
+        "C06-01",
+        "C06-02",
+        "C06-03",
+        "C06-04",
+        "C06-05",
+        "C06-06",
+        "C06-07",
+        "C06-08",
+        "C06-09",
+        "C06-10"
+      ],
+      "checkpoint_id": "C06-10",
+      "prerequisite_checkpoint": "C05-10"
+    },
+    {
+      "id": 7,
+      "title": "Dados, SQL e PostgreSQL",
+      "objective": "Ler, escrever e otimizar consultas sem comprometer consistência",
+      "gate": "Explicar planos de consulta e garantir isolamento por usuário",
+      "topic_ids": [
+        "C07-01",
+        "C07-02",
+        "C07-03",
+        "C07-04",
+        "C07-05",
+        "C07-06",
+        "C07-07",
+        "C07-08",
+        "C07-09"
+      ],
+      "checkpoint_id": "C07-09",
+      "prerequisite_checkpoint": "C06-10"
+    },
+    {
+      "id": 8,
+      "title": "Frontend React e aplicação ponta a ponta",
+      "objective": "Ler componentes e conectar interface, API e persistência de dados",
+      "gate": "Entregar tela integrada com tratamento de estados e testes",
+      "topic_ids": [
+        "C08-01",
+        "C08-02",
+        "C08-03",
+        "C08-04",
+        "C08-05",
+        "C08-06",
+        "C08-07",
+        "C08-08"
+      ],
+      "checkpoint_id": "C08-08",
+      "prerequisite_checkpoint": "C07-09"
+    },
+    {
+      "id": 9,
+      "title": "Arquitetura, containers, cloud e Kubernetes",
+      "objective": "Justificar decisões e operar uma aplicação implantada",
+      "gate": "Desenhar arquitetura escalável e explicar a recuperação de uma falha",
+      "topic_ids": [
+        "C09-01",
+        "C09-02",
+        "C09-03",
+        "C09-04",
+        "C09-05",
+        "C09-06",
+        "C09-07",
+        "C09-08",
+        "C09-09",
+        "C09-10"
+      ],
+      "checkpoint_id": "C09-10",
+      "prerequisite_checkpoint": "C08-08"
+    },
+    {
+      "id": 10,
+      "title": "Observabilidade, SRE e engenharia de dados",
+      "objective": "Diagnosticar um sistema e medir qualidade sem depender de opinião",
+      "gate": "Instrumentar serviço, definir SLO e interpretar métricas/logs",
+      "topic_ids": [
+        "C10-01",
+        "C10-02",
+        "C10-03",
+        "C10-04",
+        "C10-05",
+        "C10-06",
+        "C10-07",
+        "C10-08",
+        "C10-09"
+      ],
+      "checkpoint_id": "C10-09",
+      "prerequisite_checkpoint": "C09-10"
+    },
+    {
+      "id": 11,
+      "title": "Fundamentos de segurança e raciocínio ofensivo/defensivo",
+      "objective": "Descrever superfícies de ataque, identidades, riscos e mitigações",
+      "gate": "Criar modelo de ameaças verificável de uma aplicação",
+      "topic_ids": [
+        "C11-01",
+        "C11-02",
+        "C11-03",
+        "C11-04",
+        "C11-05",
+        "C11-06",
+        "C11-07",
+        "C11-08",
+        "C11-09"
+      ],
+      "checkpoint_id": "C11-09",
+      "prerequisite_checkpoint": "C10-09"
+    },
+    {
+      "id": 12,
+      "title": "AppSec e segurança de aplicações web",
+      "objective": "Reconhecer vulnerabilidades, prevenir e validar correções em laboratório",
+      "gate": "Completar laboratórios autorizados e produzir testes de regressão",
+      "topic_ids": [
+        "C12-01",
+        "C12-02",
+        "C12-03",
+        "C12-04",
+        "C12-05",
+        "C12-06",
+        "C12-07",
+        "C12-08",
+        "C12-09",
+        "C12-10",
+        "C12-11",
+        "C12-12"
+      ],
+      "checkpoint_id": "C12-12",
+      "prerequisite_checkpoint": "C11-09"
+    },
+    {
+      "id": 13,
+      "title": "DevSecOps, IAM, cloud security e hardening",
+      "objective": "Integrar segurança ao ciclo de entrega e à infraestrutura",
+      "gate": "Demonstrar pipeline seguro e cloud com menor privilégio",
+      "topic_ids": [
+        "C13-01",
+        "C13-02",
+        "C13-03",
+        "C13-04",
+        "C13-05",
+        "C13-06",
+        "C13-07",
+        "C13-08",
+        "C13-09",
+        "C13-10"
+      ],
+      "checkpoint_id": "C13-10",
+      "prerequisite_checkpoint": "C12-12"
+    },
+    {
+      "id": 14,
+      "title": "Pentest autorizado, resposta a incidentes e segurança de IA",
+      "objective": "Consolidar fundamentos de AppSec e compreender testes em ambiente autorizado",
+      "gate": "Produzir relatório técnico e capstone seguro, sem atacar sistemas externos",
+      "topic_ids": [
+        "C14-01",
+        "C14-02",
+        "C14-03",
+        "C14-04",
+        "C14-05",
+        "C14-06",
+        "C14-07",
+        "C14-08",
+        "C14-09",
+        "C14-10"
+      ],
+      "checkpoint_id": "C14-10",
+      "prerequisite_checkpoint": "C13-10"
+    }
+  ],
+  "topics": [
+    {
+      "id": "C01-01",
+      "phase": 1,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Raciocínio lógico e pseudocódigo",
+      "description": "Decompor problemas em entrada, processamento e saída",
+      "practice": "Escreva pseudocódigo para validar um pedido e execute mentalmente 3 cenários.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C01-02",
+      "phase": 1,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Variáveis, tipos e operadores",
+      "description": "Rastrear mudanças de estado e coerção de tipos",
+      "practice": "Faça uma tabela de variáveis linha a linha e preveja 5 saídas.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C01-03",
+      "phase": 1,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Condicionais e laços",
+      "description": "Entender ramificações, loop e condição de parada",
+      "practice": "Preveja a saída de 5 laços e corrija um loop infinito.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C01-04",
+      "phase": 1,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Funções e escopo",
+      "description": "Distinguir parâmetros, argumentos, retornos e variáveis locais",
+      "practice": "Explique a execução de 3 chamadas aninhadas e modifique uma função.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C01-05",
+      "phase": 1,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Tabela de execução (dry run)",
+      "description": "Manter uma trilha de valores durante a execução",
+      "practice": "Monte o trace de um algoritmo sem rodar e compare com o debugger.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C01-06",
+      "phase": 1,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Operadores booleanos e tabelas verdade",
+      "description": "Interpretar AND, OR, NOT e short-circuit",
+      "practice": "Monte 8 previsões de expressão e verifique no Node.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C01-07",
+      "phase": 1,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Erros, casos de borda e invariantes",
+      "description": "Descrever pré-condições, pós-condições e falhas esperadas",
+      "practice": "Liste 5 entradas extremas e defina o comportamento esperado.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C01-08",
+      "phase": 1,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Entrada, processamento e saída",
+      "description": "Identificar contratos de funções e transformações",
+      "practice": "Leia um código alheio e desenhe seu fluxo de dados.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C01-09",
+      "phase": 1,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Leitura de código sem IA — baseline",
+      "description": "Medir a capacidade atual em trechos desconhecidos",
+      "practice": "Resolva um teste com 10 critérios, sem consultar nem IA.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C01-10",
+      "phase": 1,
+      "track": "Fundamentos",
+      "kind": "checkpoint",
+      "title": "Desafio de saída 01 — interpretar código",
+      "description": "Explicar, prever e alterar códigos curtos inéditos",
+      "practice": "Acerte 8/10 critérios em dois trechos diferentes, justificando cada saída.",
+      "evidence": "Ler dois trechos inéditos de 20–40 linhas e acertar pelo menos 8/10 critérios sem IA",
+      "estimated_minutes": 60,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [
+        "C01-01",
+        "C01-02",
+        "C01-03",
+        "C01-04",
+        "C01-05",
+        "C01-06",
+        "C01-07",
+        "C01-08",
+        "C01-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C02-01",
+      "phase": 2,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Sintaxe, declaração e operadores JS",
+      "description": "Diferenciar let/const e tipos primitivos no runtime",
+      "practice": "Preveja saídas com comparações, coerção e operadores de atribuição.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [
+        "C01-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C02-02",
+      "phase": 2,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Arrays: map, filter e reduce",
+      "description": "Ler pipelines de transformação de coleções",
+      "practice": "Preveja e modifique map/filter/reduce em 3 conjuntos de dados.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [
+        "C01-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C02-03",
+      "phase": 2,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Objetos e destructuring",
+      "description": "Interpretar propriedades, cópias, referências e spread",
+      "practice": "Explique mutabilidade e corrija uma alteração indesejada.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [
+        "C01-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C02-04",
+      "phase": 2,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Strings, numbers e datas",
+      "description": "Tratar parsing, formatação e validação básica",
+      "practice": "Implemente normalização de nomes e números sem copiar.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [
+        "C01-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C02-05",
+      "phase": 2,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Funções, callbacks básicos e arrow functions",
+      "description": "Rastrear parâmetros e callbacks de transformação",
+      "practice": "Transforme uma função tradicional em arrow e teste seu retorno.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [
+        "C01-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C02-06",
+      "phase": 2,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Arrays, objetos, Map e Set",
+      "description": "Selecionar estrutura adequada para cada problema",
+      "practice": "Agrupe registros e remova duplicatas usando duas estruturas diferentes.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [
+        "C01-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C02-07",
+      "phase": 2,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Nullish coalescing e optional chaining",
+      "description": "Interpretar dados opcionais e valores ausentes",
+      "practice": "Corrija uma leitura de objeto aninhado que gera erro.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [
+        "C01-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C02-08",
+      "phase": 2,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "JSON, serialização e parsing",
+      "description": "Entender dados na fronteira entre serviços",
+      "practice": "Converta um payload e valide um formato esperado.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [
+        "C01-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C02-09",
+      "phase": 2,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Mini projeto JS — estoque EZBikes",
+      "description": "Modelar produtos e filtrar bicicletas por preço/categoria",
+      "practice": "Crie consulta de estoque e testes simples, com explicação linha a linha.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [
+        "C01-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C02-10",
+      "phase": 2,
+      "track": "JavaScript",
+      "kind": "checkpoint",
+      "title": "Desafio de saída 02 — funções e coleções",
+      "description": "Resolver transformações inéditas sem depender de IA",
+      "practice": "Implemente 4 funções e explique duas implementações de terceiros.",
+      "evidence": "Implementar 4 funções sem IA e explicar como a execução altera os valores",
+      "estimated_minutes": 60,
+      "priority": 3,
+      "resource_url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide",
+      "prerequisite_ids": [
+        "C02-01",
+        "C02-02",
+        "C02-03",
+        "C02-04",
+        "C02-05",
+        "C02-06",
+        "C02-07",
+        "C02-08",
+        "C02-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C03-01",
+      "phase": 3,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Closures e callbacks",
+      "description": "Explicar estado capturado, efeitos e callbacks",
+      "practice": "Preveja saídas de closures e conserte um callback com estado inesperado.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C02-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C03-02",
+      "phase": 3,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Hoisting, escopo lexical e this",
+      "description": "Diferenciar ambientes de execução e binding",
+      "practice": "Rastreie 4 exemplos de this e escopo, prevendo o resultado.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C02-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C03-03",
+      "phase": 3,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Promises e async/await",
+      "description": "Explicar execução assíncrona e propagação de erros",
+      "practice": "Preveja a ordem de 8 logs com promises e temporizadores.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C02-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C03-04",
+      "phase": 3,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Event loop e microtasks",
+      "description": "Diferenciar pilha, fila e tarefas assíncronas",
+      "practice": "Desenhe a ordem de eventos de um snippet com await e timers.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C02-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C03-05",
+      "phase": 3,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Módulos e tratamento de erros",
+      "description": "Aplicar import/export, throw, try/catch e erro tipado",
+      "practice": "Separe funções em módulos e trate três casos de erro.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C02-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C03-06",
+      "phase": 3,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Debugging com breakpoints",
+      "description": "Usar depurador, stack trace, watch e passos",
+      "practice": "Investigue um bug real e registre causa e correção.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C02-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C03-07",
+      "phase": 3,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Manipulação imutável e efeitos colaterais",
+      "description": "Identificar mutações inesperadas e funções puras",
+      "practice": "Refatore função com mutação global e compare os testes.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C02-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C03-08",
+      "phase": 3,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Leitura de código legado",
+      "description": "Reconstruir fluxo de funções em diferentes arquivos",
+      "practice": "Explique o comportamento de 60 linhas desconhecidas antes de editar.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C02-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C03-09",
+      "phase": 3,
+      "track": "JavaScript",
+      "kind": "core",
+      "title": "Mini projeto — cliente HTTP resiliente",
+      "description": "Tratar timeout, retries limitados e erros de uma API",
+      "practice": "Consuma uma API simulada com erros e logs, com testes.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C02-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C03-10",
+      "phase": 3,
+      "track": "JavaScript",
+      "kind": "checkpoint",
+      "title": "Desafio de saída 03 — depuração",
+      "description": "Diagnosticar um bug novo e explicar a correção",
+      "practice": "Identifique causa raiz em menos de 45 min e deixe teste de regressão.",
+      "evidence": "Explicar ordem de execução, capturar erros e isolar um bug reproduzível",
+      "estimated_minutes": 60,
+      "priority": 3,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C03-01",
+        "C03-02",
+        "C03-03",
+        "C03-04",
+        "C03-05",
+        "C03-06",
+        "C03-07",
+        "C03-08",
+        "C03-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C04-01",
+      "phase": 4,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Complexidade e algoritmos",
+      "description": "Explicar O(1), O(n), O(n²), custo de memória",
+      "practice": "Compare duas soluções com tamanhos crescentes e justifique o custo.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "prerequisite_ids": [
+        "C03-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C04-02",
+      "phase": 4,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Busca linear e binária",
+      "description": "Entender precondições e invariantes de busca",
+      "practice": "Implemente duas buscas e teste lista vazia e duplicados.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "prerequisite_ids": [
+        "C03-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C04-03",
+      "phase": 4,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Ordenação e comparadores",
+      "description": "Explicar critério de ordenação e estabilidade",
+      "practice": "Ordene pedidos por critérios sem modificar os dados originais.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "prerequisite_ids": [
+        "C03-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C04-04",
+      "phase": 4,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Pilha, fila, lista e hash map",
+      "description": "Aplicar estruturas a problemas de operação",
+      "practice": "Simule fila de atendimento e cache de consultas.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "prerequisite_ids": [
+        "C03-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C04-05",
+      "phase": 4,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Recursão e iteração",
+      "description": "Identificar caso-base, progresso e stack",
+      "practice": "Reescreva uma solução recursiva de forma iterativa.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "prerequisite_ids": [
+        "C03-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C04-06",
+      "phase": 4,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Algoritmos de grafos: introdução",
+      "description": "Modelar dependências e percursos em grafos",
+      "practice": "Represente pré-requisitos de uma trilha e detecte ciclo simples.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "prerequisite_ids": [
+        "C03-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C04-07",
+      "phase": 4,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Testes automatizados",
+      "description": "Criar testes unitários, parametrizados e casos de borda",
+      "practice": "Escreva 10 testes de funções puras com runner do Node.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "prerequisite_ids": [
+        "C03-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C04-08",
+      "phase": 4,
+      "track": "Fundamentos",
+      "kind": "core",
+      "title": "Refatoração e legibilidade",
+      "description": "Reduzir duplicação e melhorar nomes e contratos",
+      "practice": "Melhore código feio sem mudar seus resultados e prove por testes.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "prerequisite_ids": [
+        "C03-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C04-09",
+      "phase": 4,
+      "track": "Fundamentos",
+      "kind": "checkpoint",
+      "title": "Desafio de saída 04 — algoritmos testáveis",
+      "description": "Justificar estratégia e comparar alternativas",
+      "practice": "Resolva 2 problemas e entregue testes, complexidade e trade-offs.",
+      "evidence": "Passar testes de correção e justificar complexidade e casos limites",
+      "estimated_minutes": 60,
+      "priority": 2,
+      "resource_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "prerequisite_ids": [
+        "C04-01",
+        "C04-02",
+        "C04-03",
+        "C04-04",
+        "C04-05",
+        "C04-06",
+        "C04-07",
+        "C04-08"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C05-01",
+      "phase": 5,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Linux e shell",
+      "description": "Navegar em arquivos, processos, streams e permissões",
+      "practice": "Investigue logs, variáveis de ambiente e códigos de saída.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://linuxjourney.com/",
+      "prerequisite_ids": [
+        "C04-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C05-02",
+      "phase": 5,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Processos, memória e sistema de arquivos",
+      "description": "Entender PID, sockets, processos filhos e sinais",
+      "practice": "Identifique processo que usa uma porta e encerre-o corretamente.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://linuxjourney.com/",
+      "prerequisite_ids": [
+        "C04-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C05-03",
+      "phase": 5,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Git e fluxo de branches",
+      "description": "Reverter, fazer merge, resolver conflito e revisar diffs",
+      "practice": "Crie branch, PR simulado, conflito e restauração sem apagar trabalho.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://linuxjourney.com/",
+      "prerequisite_ids": [
+        "C04-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C05-04",
+      "phase": 5,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Terminal e scripts de automação",
+      "description": "Construir scripts defensivos e reproduzíveis",
+      "practice": "Automatize testes e validação de ambiente com tratamento de erro.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://linuxjourney.com/",
+      "prerequisite_ids": [
+        "C04-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C05-05",
+      "phase": 5,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Modelos TCP/IP, DNS e roteamento",
+      "description": "Explicar resolução DNS, portas e tráfego",
+      "practice": "Rastreie requisição de domínio até IP e porta, com ferramentas locais.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://linuxjourney.com/",
+      "prerequisite_ids": [
+        "C04-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C05-06",
+      "phase": 5,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "HTTP, APIs REST e status codes",
+      "description": "Interpretar método, cabeçalho, corpo, cache e status",
+      "practice": "Use curl para diagnosticar um 401, 404 e 500.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://linuxjourney.com/",
+      "prerequisite_ids": [
+        "C04-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C05-07",
+      "phase": 5,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "TLS, certificados e HTTPS",
+      "description": "Descrever handshake, validação e criptografia de transporte",
+      "practice": "Inspecione certificado e explique como o cliente confia no servidor.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://linuxjourney.com/",
+      "prerequisite_ids": [
+        "C04-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C05-08",
+      "phase": 5,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Cookies, sessões e CORS",
+      "description": "Explicar escopos e fluxos de sessão no navegador",
+      "practice": "Compare request autenticado e preflight no devtools.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://linuxjourney.com/",
+      "prerequisite_ids": [
+        "C04-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C05-09",
+      "phase": 5,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Logs e diagnóstico em CLI",
+      "description": "Correlacionar falhas entre cliente e servidor",
+      "practice": "Investigue uma falha simulada com curl e logs em dois serviços.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://linuxjourney.com/",
+      "prerequisite_ids": [
+        "C04-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C05-10",
+      "phase": 5,
+      "track": "Engenharia",
+      "kind": "checkpoint",
+      "title": "Desafio de saída 05 — diagnosticar uma API",
+      "description": "Localizar problema de rede/HTTP com evidências",
+      "practice": "Explique a sequência DNS→TLS→HTTP e reproduza/solucione uma falha.",
+      "evidence": "Diagnosticar conexão HTTP e publicar repositório com histórico claro",
+      "estimated_minutes": 60,
+      "priority": 2,
+      "resource_url": "https://linuxjourney.com/",
+      "prerequisite_ids": [
+        "C05-01",
+        "C05-02",
+        "C05-03",
+        "C05-04",
+        "C05-05",
+        "C05-06",
+        "C05-07",
+        "C05-08",
+        "C05-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C06-01",
+      "phase": 6,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "TypeScript: tipos e interfaces",
+      "description": "Modelar contratos, unions, generics básicos e narrowing",
+      "practice": "Converta módulo JS para TS e elimine any injustificado.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C05-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C06-02",
+      "phase": 6,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "Node.js: runtime e módulos",
+      "description": "Entender event loop, módulos e APIs nativas",
+      "practice": "Explique ciclo de execução de servidor Node e seus erros.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C05-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C06-03",
+      "phase": 6,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "Servidor HTTP e roteamento",
+      "description": "Separar rotas, handlers e serviços",
+      "practice": "Crie rotas de catálogo com respostas HTTP corretas.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C05-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C06-04",
+      "phase": 6,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "Criar uma API com Node.js",
+      "description": "Integrar validação, services e erros HTTP",
+      "practice": "Implemente CRUD de bicicletas com casos de borda.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C05-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C06-05",
+      "phase": 6,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "Validação de entradas e contratos",
+      "description": "Distinguir confiança externa de dados internos",
+      "practice": "Adicione schema validation e testes de entradas malformadas.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C05-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C06-06",
+      "phase": 6,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "Assincronismo e concorrência no backend",
+      "description": "Gerenciar promise, limites de paralelismo e cancelamento",
+      "practice": "Processe lote com controle de concorrência e erros.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C05-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C06-07",
+      "phase": 6,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "Autenticação e autorização no backend",
+      "description": "Diferenciar identidade, sessão e permissão",
+      "practice": "Projete roles e teste acesso a objetos de outros usuários.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C05-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C06-08",
+      "phase": 6,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "Testes de integração para APIs",
+      "description": "Testar rotas, banco de teste e erros",
+      "practice": "Automatize fluxo criação→consulta→alteração→erro.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C05-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C06-09",
+      "phase": 6,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "Arquitetura por camadas",
+      "description": "Diferenciar controller, service, repository e domain",
+      "practice": "Refatore um endpoint sem mudar contrato público.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C05-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C06-10",
+      "phase": 6,
+      "track": "Full Stack",
+      "kind": "checkpoint",
+      "title": "Desafio de saída 06 — API EZBikes",
+      "description": "Entregar catálogo/estoque autenticado com documentação",
+      "practice": "Demonstre rotas com testes, leitura de código e decisões justificadas.",
+      "evidence": "Entregar uma API com testes e revisar sem ajuda um endpoint desconhecido",
+      "estimated_minutes": 60,
+      "priority": 2,
+      "resource_url": "https://nodejs.org/en/learn",
+      "prerequisite_ids": [
+        "C06-01",
+        "C06-02",
+        "C06-03",
+        "C06-04",
+        "C06-05",
+        "C06-06",
+        "C06-07",
+        "C06-08",
+        "C06-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C07-01",
+      "phase": 7,
+      "track": "Banco de dados",
+      "kind": "core",
+      "title": "Modelagem relacional",
+      "description": "Representar entidades, cardinalidade e regras de integridade",
+      "practice": "Desenhe ER de produtos, pedidos, clientes e pagamentos fictícios.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.postgresql.org/docs/current/tutorial.html",
+      "prerequisite_ids": [
+        "C06-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C07-02",
+      "phase": 7,
+      "track": "Banco de dados",
+      "kind": "core",
+      "title": "SQL: consultas e JOINs",
+      "description": "Compor joins, filtros e agregações sem depender de ORM",
+      "practice": "Escreva 10 queries para responder perguntas do negócio.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.postgresql.org/docs/current/tutorial.html",
+      "prerequisite_ids": [
+        "C06-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C07-03",
+      "phase": 7,
+      "track": "Banco de dados",
+      "kind": "core",
+      "title": "Chaves, constraints e normalização",
+      "description": "Prevenir inconsistência e redundância de dados",
+      "practice": "Introduza PK, FK, CHECK, UNIQUE e justifique cada uma.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.postgresql.org/docs/current/tutorial.html",
+      "prerequisite_ids": [
+        "C06-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C07-04",
+      "phase": 7,
+      "track": "Banco de dados",
+      "kind": "core",
+      "title": "Transações e índices",
+      "description": "Compreender ACID, concorrência e desempenho",
+      "practice": "Simule atualização concorrente e examine plano de consulta.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.postgresql.org/docs/current/tutorial.html",
+      "prerequisite_ids": [
+        "C06-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C07-05",
+      "phase": 7,
+      "track": "Banco de dados",
+      "kind": "core",
+      "title": "PostgreSQL e RLS",
+      "description": "Restringir leitura/escrita por proprietário autenticado",
+      "practice": "Crie políticas de isolamento e teste com dois usuários.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.postgresql.org/docs/current/tutorial.html",
+      "prerequisite_ids": [
+        "C06-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C07-06",
+      "phase": 7,
+      "track": "Banco de dados",
+      "kind": "core",
+      "title": "Migrações, dados de teste e rollback",
+      "description": "Versionar alterações mantendo integridade",
+      "practice": "Crie migração reversível e teste em banco descartável.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.postgresql.org/docs/current/tutorial.html",
+      "prerequisite_ids": [
+        "C06-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C07-07",
+      "phase": 7,
+      "track": "Banco de dados",
+      "kind": "core",
+      "title": "Conexões, pools e transações",
+      "description": "Investigar gargalos e falhas de conexão",
+      "practice": "Simule conexões concorrentes e explique escolha do pool.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.postgresql.org/docs/current/tutorial.html",
+      "prerequisite_ids": [
+        "C06-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C07-08",
+      "phase": 7,
+      "track": "Banco de dados",
+      "kind": "core",
+      "title": "Segurança de consultas e dados",
+      "description": "Evitar SQL injection, segredo exposto e privilégio excessivo",
+      "practice": "Refatore SQL concatenado para consultas parametrizadas.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.postgresql.org/docs/current/tutorial.html",
+      "prerequisite_ids": [
+        "C06-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C07-09",
+      "phase": 7,
+      "track": "Banco de dados",
+      "kind": "checkpoint",
+      "title": "Desafio de saída 07 — PostgreSQL confiável",
+      "description": "Modelar e demonstrar acesso e consistência",
+      "practice": "Entregue schema, queries, testes de RLS e explicação de índices.",
+      "evidence": "Explicar planos de consulta e garantir isolamento por usuário",
+      "estimated_minutes": 60,
+      "priority": 2,
+      "resource_url": "https://www.postgresql.org/docs/current/tutorial.html",
+      "prerequisite_ids": [
+        "C07-01",
+        "C07-02",
+        "C07-03",
+        "C07-04",
+        "C07-05",
+        "C07-06",
+        "C07-07",
+        "C07-08"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C08-01",
+      "phase": 8,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "React: componentes e props",
+      "description": "Ler fluxo de props, composição e renderização",
+      "practice": "Explique árvore de componentes e altere prop recebida.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://react.dev/learn",
+      "prerequisite_ids": [
+        "C07-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C08-02",
+      "phase": 8,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "Estado, eventos e formulários",
+      "description": "Prever renderização e atualizações de estado",
+      "practice": "Faça um formulário validado de cadastro de bicicleta.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://react.dev/learn",
+      "prerequisite_ids": [
+        "C07-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C08-03",
+      "phase": 8,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "React: efeitos e comunicação",
+      "description": "Usar efeitos apenas quando necessários",
+      "practice": "Depure um efeito que produz renderização indevida.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://react.dev/learn",
+      "prerequisite_ids": [
+        "C07-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C08-04",
+      "phase": 8,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "Fetch, loading, erros e autenticação",
+      "description": "Tratar sucesso, latência e falhas de rede",
+      "practice": "Crie listagem com estados vazio, erro e carregando.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://react.dev/learn",
+      "prerequisite_ids": [
+        "C07-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C08-05",
+      "phase": 8,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "Acessibilidade, responsividade e UX",
+      "description": "Aplicar semântica, teclado e feedback de erros",
+      "practice": "Teste tela por teclado e ajuste leitura mobile.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://react.dev/learn",
+      "prerequisite_ids": [
+        "C07-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C08-06",
+      "phase": 8,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "Next.js: rotas e renderização",
+      "description": "Entender roteamento e fronteira cliente/servidor",
+      "practice": "Explique ciclo de dados de uma página autenticada.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://react.dev/learn",
+      "prerequisite_ids": [
+        "C07-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C08-07",
+      "phase": 8,
+      "track": "Full Stack",
+      "kind": "core",
+      "title": "Testes de interface e ponta a ponta",
+      "description": "Cobrir fluxo do usuário sem testes frágeis",
+      "practice": "Teste um fluxo de compra simulada e erros de formulário.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://react.dev/learn",
+      "prerequisite_ids": [
+        "C07-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C08-08",
+      "phase": 8,
+      "track": "Full Stack",
+      "kind": "checkpoint",
+      "title": "Desafio de saída 08 — Full Stack EZBikes",
+      "description": "Integrar componentes, API e PostgreSQL",
+      "practice": "Demonstre CRUD, login, testes e explique fluxo de ponta a ponta.",
+      "evidence": "Entregar tela integrada com tratamento de estados e testes",
+      "estimated_minutes": 60,
+      "priority": 2,
+      "resource_url": "https://react.dev/learn",
+      "prerequisite_ids": [
+        "C08-01",
+        "C08-02",
+        "C08-03",
+        "C08-04",
+        "C08-05",
+        "C08-06",
+        "C08-07"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C09-01",
+      "phase": 9,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Arquitetura de aplicações",
+      "description": "Comparar modularidade, acoplamento, coesão e trade-offs",
+      "practice": "Desenhe monólito modular e explique quando NÃO criar microsserviços.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://docs.docker.com/get-started/",
+      "prerequisite_ids": [
+        "C08-08"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C09-02",
+      "phase": 9,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Design de APIs e contratos",
+      "description": "Versionar endpoints e mapear falhas",
+      "practice": "Revise contrato, status, idempotência e paginação.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://docs.docker.com/get-started/",
+      "prerequisite_ids": [
+        "C08-08"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C09-03",
+      "phase": 9,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Docker e Compose",
+      "description": "Construir imagens reproduzíveis e minimizar superfície",
+      "practice": "Containerize API+DB com healthcheck e usuário não root.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://docs.docker.com/get-started/",
+      "prerequisite_ids": [
+        "C08-08"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C09-04",
+      "phase": 9,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "CI/CD e deploy com rollback",
+      "description": "Desenhar pipeline build, test e deploy confiável",
+      "practice": "Crie pipeline com testes e plano de rollback.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://docs.docker.com/get-started/",
+      "prerequisite_ids": [
+        "C08-08"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C09-05",
+      "phase": 9,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Arquitetura cloud e escalabilidade",
+      "description": "Entender redes cloud, balanceamento e autoscaling",
+      "practice": "Desenhe VPC, load balancer, serviços e banco gerenciado.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://docs.docker.com/get-started/",
+      "prerequisite_ids": [
+        "C08-08"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C09-06",
+      "phase": 9,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Kubernetes: pods, Deployments e Services",
+      "description": "Identificar responsabilidades do plano de controle e workload",
+      "practice": "Suba em kind, altere réplicas e analise service discovery.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://docs.docker.com/get-started/",
+      "prerequisite_ids": [
+        "C08-08"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C09-07",
+      "phase": 9,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Kubernetes: ConfigMap, Secret e HPA",
+      "description": "Explicar configuração, segredo e escalabilidade",
+      "practice": "Implante configuração e simule gatilho de escala em laboratório.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://docs.docker.com/get-started/",
+      "prerequisite_ids": [
+        "C08-08"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C09-08",
+      "phase": 9,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Resiliência, filas e idempotência",
+      "description": "Planejar retry, timeout, backoff e dead-letter queue",
+      "practice": "Projete processamento de pedidos que suporte reentrega.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://docs.docker.com/get-started/",
+      "prerequisite_ids": [
+        "C08-08"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C09-09",
+      "phase": 9,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Custo, disponibilidade e segurança cloud",
+      "description": "Justificar trade-offs de disponibilidade e custo",
+      "practice": "Compare duas arquiteturas e estimativa qualitativa de custos.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://docs.docker.com/get-started/",
+      "prerequisite_ids": [
+        "C08-08"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C09-10",
+      "phase": 9,
+      "track": "Engenharia",
+      "kind": "checkpoint",
+      "title": "Desafio de saída 09 — arquitetura implantada",
+      "description": "Operar stack e defender escolhas",
+      "practice": "Desenhe, implante e faça review técnico de falha e rollback.",
+      "evidence": "Desenhar arquitetura escalável e explicar a recuperação de uma falha",
+      "estimated_minutes": 60,
+      "priority": 2,
+      "resource_url": "https://docs.docker.com/get-started/",
+      "prerequisite_ids": [
+        "C09-01",
+        "C09-02",
+        "C09-03",
+        "C09-04",
+        "C09-05",
+        "C09-06",
+        "C09-07",
+        "C09-08",
+        "C09-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C10-01",
+      "phase": 10,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Logs estruturados e correlação",
+      "description": "Interpretar logs JSON, trace_id e contexto",
+      "practice": "Instrumente endpoints e encontre um erro usando trace_id.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/41f487f0bca281d29dd2c51c12e4e131",
+      "prerequisite_ids": [
+        "C09-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C10-02",
+      "phase": 10,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Métricas, Prometheus e PromQL",
+      "description": "Ler counters, gauges, histograms e consultas",
+      "practice": "Construa consultas para RPS, taxa de falha e p95.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/41f487f0bca281d29dd2c51c12e4e131",
+      "prerequisite_ids": [
+        "C09-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C10-03",
+      "phase": 10,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Grafana e alertas",
+      "description": "Escolher painéis e alertas úteis",
+      "practice": "Crie dashboard de Golden Signals e teste alerta.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/41f487f0bca281d29dd2c51c12e4e131",
+      "prerequisite_ids": [
+        "C09-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C10-04",
+      "phase": 10,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Traces distribuídos com OpenTelemetry",
+      "description": "Investigar latência entre componentes",
+      "practice": "Registre trace da requisição API→banco e identifique gargalo.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/41f487f0bca281d29dd2c51c12e4e131",
+      "prerequisite_ids": [
+        "C09-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C10-05",
+      "phase": 10,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "SLIs, SLOs e error budget",
+      "description": "Diferenciar medições, metas e compromissos",
+      "practice": "Defina SLO 99,9% e calcule orçamento de erro com janela correta.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/41f487f0bca281d29dd2c51c12e4e131",
+      "prerequisite_ids": [
+        "C09-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C10-06",
+      "phase": 10,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Testes de carga e análise de saturação",
+      "description": "Medir latência, erros e limites de recursos",
+      "practice": "Rode teste k6 em ambiente local e explique saturação.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/41f487f0bca281d29dd2c51c12e4e131",
+      "prerequisite_ids": [
+        "C09-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C10-07",
+      "phase": 10,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Engenharia de dados: ETL, pipelines e camadas",
+      "description": "Compreender Bronze/Silver/Gold e idempotência",
+      "practice": "Modele pipeline de CNPJ com dados fictícios e checagens.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/41f487f0bca281d29dd2c51c12e4e131",
+      "prerequisite_ids": [
+        "C09-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C10-08",
+      "phase": 10,
+      "track": "Engenharia",
+      "kind": "core",
+      "title": "Qualidade de dados e observabilidade de pipelines",
+      "description": "Detectar atraso, falha e inconsistência",
+      "practice": "Adicione métricas de freshness, linhas inválidas e retries.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/41f487f0bca281d29dd2c51c12e4e131",
+      "prerequisite_ids": [
+        "C09-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C10-09",
+      "phase": 10,
+      "track": "Engenharia",
+      "kind": "checkpoint",
+      "title": "Desafio de saída 10 — ObservaLab",
+      "description": "Instrumentar e explicar um incidente",
+      "practice": "Demonstre dashboards, SLO, causa raiz e correção medida.",
+      "evidence": "Instrumentar serviço, definir SLO e interpretar métricas/logs",
+      "estimated_minutes": 60,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/41f487f0bca281d29dd2c51c12e4e131",
+      "prerequisite_ids": [
+        "C10-01",
+        "C10-02",
+        "C10-03",
+        "C10-04",
+        "C10-05",
+        "C10-06",
+        "C10-07",
+        "C10-08"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C11-01",
+      "phase": 11,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Ética, autorização e escopo de testes",
+      "description": "Definir alvos autorizados e limites do laboratório",
+      "practice": "Documente escopo para app própria e critério de encerramento.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.nist.gov/cyberframework",
+      "prerequisite_ids": [
+        "C10-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C11-02",
+      "phase": 11,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Confidencialidade, integridade e disponibilidade",
+      "description": "Relacionar objetivos de segurança aos riscos de negócio",
+      "practice": "Classifique 8 cenários pelo objetivo afetado.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.nist.gov/cyberframework",
+      "prerequisite_ids": [
+        "C10-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C11-03",
+      "phase": 11,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Fundamentos de criptografia e hashing",
+      "description": "Diferenciar cifra, hash, assinatura, salt e KDF",
+      "practice": "Explique proteção de senha e segredo em repouso e trânsito.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.nist.gov/cyberframework",
+      "prerequisite_ids": [
+        "C10-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C11-04",
+      "phase": 11,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Identidade, autenticação, MFA e sessões",
+      "description": "Avaliar autenticação e risco de roubo de sessão",
+      "practice": "Desenhe login, renovação e logout e suas ameaças.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.nist.gov/cyberframework",
+      "prerequisite_ids": [
+        "C10-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C11-05",
+      "phase": 11,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Redes e defesa: segmentação, firewalls e logs",
+      "description": "Interpretar controles de rede e exposição",
+      "practice": "Desenhe zonas de confiança e identifique caminhos indevidos.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.nist.gov/cyberframework",
+      "prerequisite_ids": [
+        "C10-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C11-06",
+      "phase": 11,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Ameaças, STRIDE e análise de risco",
+      "description": "Classificar ameaças e associar controles",
+      "practice": "Faça STRIDE sobre fluxo login→API→Postgres.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.nist.gov/cyberframework",
+      "prerequisite_ids": [
+        "C10-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C11-07",
+      "phase": 11,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Vulnerabilidades, CVSS e EPSS",
+      "description": "Distinguir severidade de probabilidade de exploração",
+      "practice": "Priorize correções em 5 achados hipotéticos com justificativa.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.nist.gov/cyberframework",
+      "prerequisite_ids": [
+        "C10-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C11-08",
+      "phase": 11,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "OWASP Top 10:2025 — visão geral",
+      "description": "Identificar categorias e falhas fundamentais",
+      "practice": "Mapeie 10 categorias para medidas preventivas no EZBikes.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://www.nist.gov/cyberframework",
+      "prerequisite_ids": [
+        "C10-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C11-09",
+      "phase": 11,
+      "track": "Cibersegurança",
+      "kind": "checkpoint",
+      "title": "Desafio de saída 11 — threat model",
+      "description": "Justificar 5 riscos, mitigação e teste",
+      "practice": "Entregue DFD, STRIDE, classificação e backlog de remediações.",
+      "evidence": "Criar modelo de ameaças verificável de uma aplicação",
+      "estimated_minutes": 60,
+      "priority": 2,
+      "resource_url": "https://www.nist.gov/cyberframework",
+      "prerequisite_ids": [
+        "C11-01",
+        "C11-02",
+        "C11-03",
+        "C11-04",
+        "C11-05",
+        "C11-06",
+        "C11-07",
+        "C11-08"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C12-01",
+      "phase": 12,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Broken Access Control e IDOR",
+      "description": "Distinguir autenticação de autorização por recurso",
+      "practice": "Resolva laboratório autorizado e escreva teste de acesso cruzado.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C11-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C12-02",
+      "phase": 12,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "SQL injection e consultas seguras",
+      "description": "Identificar entrada não confiável em consultas",
+      "practice": "Reproduza em laboratório e corrija com parametrização.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C11-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C12-03",
+      "phase": 12,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "XSS e contextos de saída",
+      "description": "Explicar escape contextual e CSP",
+      "practice": "Resolva laboratório de XSS e aplique encoding adequado.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C11-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C12-04",
+      "phase": 12,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "CSRF, cookies e SameSite",
+      "description": "Distinguir pedido autenticado de intenção do usuário",
+      "practice": "Avalie proteção CSRF em app local e teste regressão.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C11-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C12-05",
+      "phase": 12,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "SSRF e destinos de rede",
+      "description": "Analisar acesso servidor→URL em laboratório",
+      "practice": "Implemente allowlist de destinos e teste bloqueios.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C11-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C12-06",
+      "phase": 12,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Path traversal e upload seguro",
+      "description": "Validar caminhos e uploads sem confiar no cliente",
+      "practice": "Proteja rota de download e arquivo em ambiente controlado.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C11-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C12-07",
+      "phase": 12,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Authentication flaws e gestão de sessão",
+      "description": "Identificar falhas de login, reset e rotação",
+      "practice": "Teste fluxos inválidos e implemente limite de tentativas.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C11-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C12-08",
+      "phase": 12,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Validação, serialização e injeção de comando",
+      "description": "Mapear dados externos até operações perigosas",
+      "practice": "Refatore execução de comando insegura para API segura.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C11-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C12-09",
+      "phase": 12,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "API Security e rate limiting",
+      "description": "Analisar BOLA, função, recursos e schemas",
+      "practice": "Revise endpoints com testes negativos e proteção de abuso.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C11-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C12-10",
+      "phase": 12,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "OWASP ASVS e code review seguro",
+      "description": "Traduzir requisitos em testes verificáveis",
+      "practice": "Faça checklist de segurança de 2 endpoints e registre evidências.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C11-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C12-11",
+      "phase": 12,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Burp Suite: proxy e repeater em laboratório",
+      "description": "Interpretar requisições HTTP, cookies e respostas",
+      "practice": "Interceptar apenas a app local/labs autorizados e documentar achados.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C11-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C12-12",
+      "phase": 12,
+      "track": "Cibersegurança",
+      "kind": "checkpoint",
+      "title": "Desafio de saída 12 — revisão segura de API",
+      "description": "Encontrar e corrigir problemas com testes",
+      "practice": "Escreva relatório curto de vulnerabilidade, correção e teste preventivo.",
+      "evidence": "Completar laboratórios autorizados e produzir testes de regressão",
+      "estimated_minutes": 60,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C12-01",
+        "C12-02",
+        "C12-03",
+        "C12-04",
+        "C12-05",
+        "C12-06",
+        "C12-07",
+        "C12-08",
+        "C12-09",
+        "C12-10",
+        "C12-11"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C13-01",
+      "phase": 13,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "SSDLC, shift-left e security champions",
+      "description": "Integrar controles ao planejamento e review",
+      "practice": "Desenhe critérios de segurança por fase do pipeline.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://cheatsheetseries.owasp.org/",
+      "prerequisite_ids": [
+        "C12-12"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C13-02",
+      "phase": 13,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "SAST, DAST, SCA e SBOM",
+      "description": "Distinguir análise de código, app e dependências",
+      "practice": "Configure scanners em app de laboratório e revise falsos positivos.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://cheatsheetseries.owasp.org/",
+      "prerequisite_ids": [
+        "C12-12"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C13-03",
+      "phase": 13,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Software supply chain e dependências",
+      "description": "Identificar typosquatting, dependency confusion e versões",
+      "practice": "Revise lockfile e gere inventário de dependências.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://cheatsheetseries.owasp.org/",
+      "prerequisite_ids": [
+        "C12-12"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C13-04",
+      "phase": 13,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Secrets management e rotação",
+      "description": "Evitar segredos em repositório, logs e CI",
+      "practice": "Substitua token hardcoded por variável/secret seguro.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://cheatsheetseries.owasp.org/",
+      "prerequisite_ids": [
+        "C12-12"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C13-05",
+      "phase": 13,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "GitHub Actions e pipeline seguro",
+      "description": "Aplicar mínimo privilégio e approvals",
+      "practice": "Crie pipeline de testes, SCA, SAST e artifacts com permissões mínimas.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://cheatsheetseries.owasp.org/",
+      "prerequisite_ids": [
+        "C12-12"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C13-06",
+      "phase": 13,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "IAM, OAuth2/OIDC e LGPD",
+      "description": "Relacionar identidade, escopos e proteção de dados",
+      "practice": "Revise desenho de login, roles, consentimento e retenção.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://cheatsheetseries.owasp.org/",
+      "prerequisite_ids": [
+        "C12-12"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C13-07",
+      "phase": 13,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Hardening Linux, Docker e Kubernetes",
+      "description": "Reduzir privilégios, recursos expostos e capabilities",
+      "practice": "Aplique usuário não root, read-only rootfs e NetworkPolicy em lab.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://cheatsheetseries.owasp.org/",
+      "prerequisite_ids": [
+        "C12-12"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C13-08",
+      "phase": 13,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Cloud Security: IAM, redes e auditoria",
+      "description": "Inspecionar políticas e separação de responsabilidades",
+      "practice": "Proponha política IAM mínima e log de auditoria.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://cheatsheetseries.owasp.org/",
+      "prerequisite_ids": [
+        "C12-12"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C13-09",
+      "phase": 13,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Resiliência e resposta a incidentes",
+      "description": "Criar playbook, detecção, contenção e recuperação",
+      "practice": "Execute tabletop de vazamento fictício e registre decisões.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://cheatsheetseries.owasp.org/",
+      "prerequisite_ids": [
+        "C12-12"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C13-10",
+      "phase": 13,
+      "track": "Cibersegurança",
+      "kind": "checkpoint",
+      "title": "Desafio de saída 13 — pipeline seguro",
+      "description": "Garantir gates automáticos e mitigação rastreável",
+      "practice": "Demonstre PR bloqueada por falha e corrigida com evidências.",
+      "evidence": "Demonstrar pipeline seguro e cloud com menor privilégio",
+      "estimated_minutes": 60,
+      "priority": 2,
+      "resource_url": "https://cheatsheetseries.owasp.org/",
+      "prerequisite_ids": [
+        "C13-01",
+        "C13-02",
+        "C13-03",
+        "C13-04",
+        "C13-05",
+        "C13-06",
+        "C13-07",
+        "C13-08",
+        "C13-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C14-01",
+      "phase": 14,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "PortSwigger Academy — trilha inicial",
+      "description": "Executar labs guiados de HTTP, autenticação e controle de acesso",
+      "practice": "Complete labs Apprentice em ambiente autorizado com notas.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C13-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C14-02",
+      "phase": 14,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Metodologia de avaliação e escopo",
+      "description": "Separar descoberta, validação e comunicação responsável",
+      "practice": "Escreva autorização, escopo e critérios antes do teste.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C13-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C14-03",
+      "phase": 14,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Reconhecimento passivo e mapeamento em laboratório",
+      "description": "Identificar pontos de entrada de uma app própria",
+      "practice": "Mapeie rotas e dependências da EZBikes local.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C13-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C14-04",
+      "phase": 14,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Testes de autorização e lógica de negócio",
+      "description": "Explorar somente laboratório próprio ou intencional",
+      "practice": "Investigue controles por usuário e proponha testes de regressão.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C13-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C14-05",
+      "phase": 14,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Mitigação, reteste e relatório técnico",
+      "description": "Traduzir falhas em risco e ações de correção",
+      "practice": "Gere achados com impacto, evidência, fix e reteste.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C13-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C14-06",
+      "phase": 14,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Análise de logs e detecção",
+      "description": "Distinguir eventos normais de indicadores de incidente",
+      "practice": "Correlacione eventos suspeitos gerados em laboratório.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C13-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C14-07",
+      "phase": 14,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Segurança de APIs de IA e prompt injection",
+      "description": "Reconhecer entrada não confiável e fronteiras de confiança",
+      "practice": "Modele prompt injection em app RAG de testes sem dados reais.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C13-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C14-08",
+      "phase": 14,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "RAG seguro e proteção de dados",
+      "description": "Entender permissões no retrieval, PII e exfiltração",
+      "practice": "Implemente filtro de acesso por documento e teste bypass.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C13-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C14-09",
+      "phase": 14,
+      "track": "Cibersegurança",
+      "kind": "core",
+      "title": "Projeto final — EZBikes Secure",
+      "description": "Unir JS, API, banco, infraestrutura, observabilidade e segurança",
+      "practice": "Entregue solução com PR, dashboard, threat model e testes autorizados.",
+      "evidence": "Prever, executar, explicar, alterar e reconstruir o trecho; registrar evidências e autonomia.",
+      "estimated_minutes": 45,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C13-10"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "C14-10",
+      "phase": 14,
+      "track": "Cibersegurança",
+      "kind": "checkpoint",
+      "title": "Desafio de saída 14 — revisão arquitetural",
+      "description": "Ler, explicar e defender decisões em solução desconhecida",
+      "practice": "Explique 90% dos critérios de leitura em amostra definida e corrija um bug sem IA.",
+      "evidence": "Produzir relatório técnico e capstone seguro, sem atacar sistemas externos",
+      "estimated_minutes": 60,
+      "priority": 2,
+      "resource_url": "https://portswigger.net/web-security/learning-paths",
+      "prerequisite_ids": [
+        "C14-01",
+        "C14-02",
+        "C14-03",
+        "C14-04",
+        "C14-05",
+        "C14-06",
+        "C14-07",
+        "C14-08",
+        "C14-09"
+      ],
+      "due_on": null,
+      "source": "curriculo_de_estudos"
+    },
+    {
+      "id": "P01",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "Projeto Aplicado I — entrega",
+      "description": "Organizar enunciado, entregáveis, evidências e submissão (prazo confirmado).",
+      "practice": "Separar requisitos oficiais de sugestões e registrar conclusão da entrega.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://app.notion.com/p/418487f0bca281a9afa5e263168609a3",
+      "prerequisite_ids": [],
+      "due_on": "2026-11-30",
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P02",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "Engenharia de Dados em Larga Escala — atividade",
+      "description": "Preparar pipeline, segurança, observabilidade e apresentação (prazo confirmado).",
+      "practice": "Verificar rubrica real, gerar artefatos e submeter.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://app.notion.com/p/418487f0bca281a3a228c519e4f0225e",
+      "prerequisite_ids": [],
+      "due_on": "2026-11-30",
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P03",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "Observabilidade, SRE e Engenharia de Confiabilidade de Sistemas — trabalho",
+      "description": "Revisar enunciado próprio e entregar o trabalho separado (prazo confirmado).",
+      "practice": "Conferir formato de submissão; não presumir rubrica de outra aula.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 3,
+      "resource_url": "https://app.notion.com/p/418487f0bca28116a75bec076fa3e10a",
+      "prerequisite_ids": [],
+      "due_on": "2026-12-06",
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P04",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "Logs estruturados e stack ELK — material Projeto Aplicado I",
+      "description": "Interpretar JSON logs, MDC/trace_id, ELK e retenção.",
+      "practice": "Instrumentar API de testes e localizar evento por trace_id.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/41f487f0bca281d29dd2c51c12e4e131",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P05",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "Prometheus, Grafana e Golden Signals — material Projeto Aplicado I",
+      "description": "Ler counters, histogramas, PromQL e dashboards de SRE.",
+      "practice": "Criar painel com tráfego, latência, falha e saturação.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/41f487f0bca281d29dd2c51c12e4e131",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P06",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "SLI, SLO e error budget — material Projeto Aplicado I",
+      "description": "Definir indicador, objetivo, orçamento e política de alertas.",
+      "practice": "Definir um SLO, apresentar cálculo de budget e simular incidente.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/41f487f0bca281d29dd2c51c12e4e131",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P07",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "IA generativa e LLMs",
+      "description": "Revisar tokens, inferência, limitações, API e casos de uso.",
+      "practice": "Criar chamada API simulada com handling de erros, sem confundir data de aula com prazo.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P08",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "RAG e bancos vetoriais",
+      "description": "Diferenciar embeddings, busca, chunking e avaliação de retrieval.",
+      "practice": "Criar busca em documentos fictícios com citações de origem.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P09",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "LLMOps e ciclo de vida — aula 20/02",
+      "description": "Trabalhar avaliação, custo, tracing, versionamento de prompt e drift.",
+      "practice": "Esboçar pipeline de avaliação e monitoramento.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P10",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "Projeto Aplicado II — integração IA — aula 06/03",
+      "description": "Integrar componentes IA em uma aplicação escalável.",
+      "practice": "Definir escopo e evidências depois de conferir o enunciado oficial.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P11",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "DevSecOps e segurança em pipelines — aula 20/03",
+      "description": "Revisar SSDLC, SAST, SCA, SBOM, DAST e CI segura.",
+      "practice": "Propor controles e testes em pipeline de laboratório.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P12",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "Gestão de identidade, autenticação e LGPD — aula 10/04",
+      "description": "Distinguir autenticação, autorização, IAM e proteção de dados.",
+      "practice": "Revisar desenho de sessões, acessos e retenção.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P13",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "Segurança em cloud e resiliência — aula 24/04",
+      "description": "Identificar riscos em rede, IAM, logs, alta disponibilidade e backup.",
+      "practice": "Desenhar arquitetura cloud segura e plano de recuperação.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P14",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "Segurança de sistemas de IA — aula 08/05",
+      "description": "Trabalhar prompt injection, vazamento de contexto e segurança de retrieval.",
+      "practice": "Criar matriz de riscos para aplicação de IA em laboratório.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P15",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "Projeto Aplicado III — hardening e arquitetura segura — aula 22/05",
+      "description": "Planejar padrões de arquitetura segura e evidências de hardening.",
+      "practice": "Preparar checklist e aguardar rubrica oficial.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "notion_2026_11_22"
+    },
+    {
+      "id": "P16",
+      "phase": 0,
+      "track": "Pós-graduação",
+      "kind": "postgrad",
+      "title": "Seminário final — projeto arquitetural escalável — aula 12/06",
+      "description": "Apresentar trade-offs, confiabilidade, custo e proteção de dados.",
+      "practice": "Preparar defesa técnica com diagramas e decisão registrada.",
+      "evidence": "Reexplicar sem consulta e registrar artefato, nota ou submissão (conforme a atividade).",
+      "estimated_minutes": 30,
+      "priority": 2,
+      "resource_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3",
+      "prerequisite_ids": [],
+      "due_on": null,
+      "source": "notion_2026_11_22"
+    }
+  ],
+  "postgrad_class_schedule": [
+    {
+      "date": "2026-11-28",
+      "title": "Inteligência Artificial Generativa e Large Language Models",
+      "time": "08:00–12:00 (horário habitual, confirmar)",
+      "is_deadline": false,
+      "source_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3"
+    },
+    {
+      "date": "2026-12-12",
+      "title": "Sistemas baseados em RAG e Bancos Vetoriais",
+      "time": "08:00–12:00 (horário habitual, confirmar)",
+      "is_deadline": false,
+      "source_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3"
+    },
+    {
+      "date": "2027-02-20",
+      "title": "LLMOps e Ciclo de Vida de Sistemas Inteligentes",
+      "time": "08:00–12:00 (horário habitual, confirmar)",
+      "is_deadline": false,
+      "source_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3"
+    },
+    {
+      "date": "2027-03-06",
+      "title": "Projeto Aplicado II: Integração de Inteligência em Sistemas",
+      "time": "08:00–12:00 (horário habitual, confirmar)",
+      "is_deadline": false,
+      "source_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3"
+    },
+    {
+      "date": "2027-03-20",
+      "title": "DevSecOps e Segurança em Pipelines de Software",
+      "time": "08:00–12:00 (horário habitual, confirmar)",
+      "is_deadline": false,
+      "source_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3"
+    },
+    {
+      "date": "2027-04-10",
+      "title": "Gestão de Identidade, Autenticação e LGPD",
+      "time": "08:00–12:00 (horário habitual, confirmar)",
+      "is_deadline": false,
+      "source_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3"
+    },
+    {
+      "date": "2027-04-24",
+      "title": "Segurança em Cloud e Resiliência de Sistemas",
+      "time": "08:00–12:00 (horário habitual, confirmar)",
+      "is_deadline": false,
+      "source_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3"
+    },
+    {
+      "date": "2027-05-08",
+      "title": "Segurança de Sistemas de Inteligência Artificial",
+      "time": "08:00–12:00 (horário habitual, confirmar)",
+      "is_deadline": false,
+      "source_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3"
+    },
+    {
+      "date": "2027-05-22",
+      "title": "Projeto Aplicado III: Hardening e Arquitetura Segura",
+      "time": "08:00–12:00 (horário habitual, confirmar)",
+      "is_deadline": false,
+      "source_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3"
+    },
+    {
+      "date": "2027-06-12",
+      "title": "Seminário de Encerramento: Projeto Arquitetural Escalável",
+      "time": "08:00–12:00 (horário habitual, confirmar)",
+      "is_deadline": false,
+      "source_url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Central da pós no Notion",
+      "url": "https://app.notion.com/p/418487f0bca281f49fb0d174e9d01bc3"
+    },
+    {
+      "name": "Projeto Aplicado I: observabilidade",
+      "url": "https://app.notion.com/p/41f487f0bca281d29dd2c51c12e4e131"
+    },
+    {
+      "name": "AppSec: anotações do Notion",
+      "url": "https://app.notion.com/p/407487f0bca2808dae5ac39a89942192"
+    },
+    {
+      "name": "OWASP Top 10:2025",
+      "url": "https://top10.owasp.org/2025/"
+    },
+    {
+      "name": "PortSwigger Web Security Academy",
+      "url": "https://portswigger.net/web-security/learning-paths"
+    }
+  ]
+}
