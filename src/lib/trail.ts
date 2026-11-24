@@ -8,14 +8,21 @@ export interface TrailTopic {
   resource_url: string | null; prerequisite_ids: string[]; due_on: string | null; class_on: string | null; sort_order: number;
 }
 export interface TrailPhase { id: number; title: string; objective: string; gate: string; topic_ids: string[]; checkpoint_id: string; prerequisite_checkpoint: string | null }
-export interface Book { id: string; title: string; author: string; lang: 'pt' | 'en'; category: string; source: 'bibliotecadev' | 'externo'; file?: string; url?: string }
+export interface Chapter { id: string; title: string }
+export interface Book {
+  id: string; title: string; author: string; lang: 'pt' | 'en'; category: string;
+  /** bibliotecadev = PDF no seu repositório (abre no leitor do app); ydkjs-pt = capítulos no GitHub; externo = site. */
+  source: 'bibliotecadev' | 'externo' | 'ydkjs-pt';
+  file?: string; url?: string; dir?: string; chapters?: Chapter[];
+}
 export type ReadingRole = 'principal' | 'apoio' | 'consulta';
-export interface ReadingItem { id: string; phase: number; book_id: string; role: ReadingRole; focus: string; topic_ids: string[] }
+export interface ReadingItem { id: string; phase: number; book_id: string; role: ReadingRole; focus: string; topic_ids: string[]; chapters?: string[] }
+export interface Collection { name: string; repo_url: string; file_base_url: string; license: string; note: string }
 export interface ClassEntry { date: string; title: string; time: string; is_deadline: boolean; source_url: string }
 export interface LibraryGap { area: string; suggestion: string }
 interface TrailData {
   version: string; phases: TrailPhase[]; topics: TrailTopic[];
-  library: { name: string; repo_url: string; file_base_url: string; books: Book[] };
+  library: { name: string; repo_url: string; file_base_url: string; books: Book[]; collections: Record<string, Collection> };
   reading_plan: ReadingItem[]; career_rotation: string[]; library_gaps: LibraryGap[];
   postgrad_class_schedule: ClassEntry[]; dashboard_logic: string[];
 }
@@ -31,8 +38,27 @@ export function phaseById(id: number | null | undefined): TrailPhase | undefined
 export function bookById(id: string): Book | undefined { return BOOKS.get(id); }
 export function catalogTopic(code: string | null | undefined): TrailTopic | undefined { return code ? CATALOG.get(code) : undefined; }
 
+export const YDKJS = TRAIL.library.collections['ydkjs-pt'];
+const encodePath = (path: string) => path.split('/').map(encodeURIComponent).join('/');
+
+/** Página do livro: PDF no GitHub, índice do livro YDKJS ou site externo. */
 export function bookUrl(book: Book): string {
-  return book.source === 'bibliotecadev' ? TRAIL.library.file_base_url + encodeURI(book.file ?? '') : book.url ?? TRAIL.library.repo_url;
+  if (book.source === 'bibliotecadev') return TRAIL.library.file_base_url + encodeURI(book.file ?? '');
+  if (book.source === 'ydkjs-pt') return YDKJS.file_base_url + encodePath(`${book.dir}/README.md`);
+  return book.url ?? TRAIL.library.repo_url;
+}
+/** Capítulo de um livro YDKJS no GitHub (a tradução só pode ser lida lá). */
+export function chapterUrl(book: Book, chapterId: string): string {
+  return YDKJS.file_base_url + encodePath(`${book.dir}/${chapterId}.md`);
+}
+export function chapterTitle(book: Book, chapterId: string): string {
+  return book.chapters?.find(c => c.id === chapterId)?.title ?? chapterId;
+}
+/** Arquivo bruto do PDF (CORS liberado), para o leitor dentro do app. Só livros da BibliotecaDev. */
+export function pdfRawUrl(book: Book): string | undefined {
+  if (book.source !== 'bibliotecadev' || !book.file) return undefined;
+  const base = TRAIL.library.file_base_url.replace('https://github.com/', 'https://raw.githubusercontent.com/').replace('/blob/', '/');
+  return base + encodePath(book.file);
 }
 
 /** Linha para upsert em study_topics. Não inclui status/next_review_on: o progresso do usuário é preservado. */

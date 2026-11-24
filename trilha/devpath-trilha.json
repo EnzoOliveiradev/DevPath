@@ -4622,6 +4622,228 @@
         "file": "LivrosDev/Guia do Mestre Programador - Pensando como pirata, evoluindo como jedi - Autor (Casa do Código).pdf"
       },
       {
+        "id": "ydkjs-iniciando",
+        "title": "You Don't Know JS: Iniciando",
+        "author": "Kyle Simpson (tradução da comunidade)",
+        "lang": "pt",
+        "category": "You Don't Know JS (PT-BR)",
+        "source": "ydkjs-pt",
+        "dir": "up & going",
+        "chapters": [
+          {
+            "id": "ch1",
+            "title": "Capítulo 1: Iniciando"
+          },
+          {
+            "id": "ch2",
+            "title": "Capítulo 2: Por dentro do JavaScript"
+          },
+          {
+            "id": "ch3",
+            "title": "Capítulo 3: Dentro do YDKJS"
+          }
+        ]
+      },
+      {
+        "id": "ydkjs-tipos",
+        "title": "You Don't Know JS: Tipos & Gramática",
+        "author": "Kyle Simpson (tradução da comunidade)",
+        "lang": "pt",
+        "category": "You Don't Know JS (PT-BR)",
+        "source": "ydkjs-pt",
+        "dir": "types & grammar",
+        "chapters": [
+          {
+            "id": "ch1",
+            "title": "Capítulo 1: Tipos"
+          },
+          {
+            "id": "ch2",
+            "title": "Capítulo 2: Valores"
+          },
+          {
+            "id": "ch3",
+            "title": "Capítulo 3: Nativos"
+          },
+          {
+            "id": "ch4",
+            "title": "Capítulo 4: Coerção"
+          },
+          {
+            "id": "ch5",
+            "title": "Capítulo 5: Gramática"
+          },
+          {
+            "id": "apA",
+            "title": "Apêndice A: JavaScript em Ambiente Misto"
+          }
+        ]
+      },
+      {
+        "id": "ydkjs-escopos",
+        "title": "You Don't Know JS: Escopos & Closures",
+        "author": "Kyle Simpson (tradução da comunidade)",
+        "lang": "pt",
+        "category": "You Don't Know JS (PT-BR)",
+        "source": "ydkjs-pt",
+        "dir": "scope & closures",
+        "chapters": [
+          {
+            "id": "ch1",
+            "title": "Capítulo 1: O que é Escopo?"
+          },
+          {
+            "id": "ch2",
+            "title": "Capítulo 2: Escopo Léxico"
+          },
+          {
+            "id": "ch3",
+            "title": "Capítulo 3: Escopo de função vs. Escopo de bloco"
+          },
+          {
+            "id": "ch4",
+            "title": "Capítulo 4: Hoisting"
+          },
+          {
+            "id": "ch5",
+            "title": "Capítulo 5: Closures de Escopo"
+          },
+          {
+            "id": "apA",
+            "title": "Apêndice A: Escopo Dinâmico"
+          },
+          {
+            "id": "apB",
+            "title": "Apêndice B: Polyfilling Escopo de Bloco"
+          },
+          {
+            "id": "apC",
+            "title": "Apêndice C: Lexical-this"
+          }
+        ]
+      },
+      {
+        "id": "ydkjs-this",
+        "title": "You Don't Know JS: this & Prototipagem de Objetos",
+        "author": "Kyle Simpson (tradução da comunidade)",
+        "lang": "pt",
+        "category": "You Don't Know JS (PT-BR)",
+        "source": "ydkjs-pt",
+        "dir": "this & object prototypes",
+        "chapters": [
+          {
+            "id": "ch1",
+            "title": "Capítulo 1: this Ou Aquilo?"
+          },
+          {
+            "id": "ch2",
+            "title": "Capítulo 2: this Agora tudo faz sentido!"
+          },
+          {
+            "id": "ch3",
+            "title": "Capítulo 3: Objetos"
+          },
+          {
+            "id": "ch4",
+            "title": "Capítulo 4: Confundindo Objetos com \"Classes\""
+          },
+          {
+            "id": "ch5",
+            "title": "Capítulo 5: Protótipos"
+          },
+          {
+            "id": "ch6",
+            "title": "Capítulo 6: Delegação de Comportamentos"
+          },
+          {
+            "id": "apA",
+            "title": "Apêndice A: ES6 class"
+          }
+        ]
+      },
+      {
+        "id": "ydkjs-async",
+        "title": "You Don't Know JS: Async & Performance",
+        "author": "Kyle Simpson (tradução da comunidade)",
+        "lang": "pt",
+        "category": "You Don't Know JS (PT-BR)",
+        "source": "ydkjs-pt",
+        "dir": "async & performance",
+        "chapters": [
+          {
+            "id": "ch1",
+            "title": "Capítulo 1: Assincronia: Agora & Depois"
+          },
+          {
+            "id": "ch2",
+            "title": "Capítulo 2: Callbacks"
+          },
+          {
+            "id": "ch3",
+            "title": "Capítulo 3: Promises"
+          },
+          {
+            "id": "ch4",
+            "title": "Capítulo 4: Geradores"
+          },
+          {
+            "id": "ch5",
+            "title": "Capítulo 5: Desempenho de Programas"
+          },
+          {
+            "id": "ch6",
+            "title": "Capítulo 6: Benchmarking & Ajustes"
+          },
+          {
+            "id": "apB",
+            "title": "Apêndice B: Padrões Assíncronos Avançados"
+          }
+        ]
+      },
+      {
+        "id": "ydkjs-es6",
+        "title": "You Don't Know JS: ES6 & Além",
+        "author": "Kyle Simpson (tradução da comunidade)",
+        "lang": "pt",
+        "category": "You Don't Know JS (PT-BR)",
+        "source": "ydkjs-pt",
+        "dir": "es6 & beyond",
+        "chapters": [
+          {
+            "id": "ch1",
+            "title": "Capítulo 1: ES? Presente e Futuro"
+          },
+          {
+            "id": "ch2",
+            "title": "Capítulo 2: Sintaxe"
+          },
+          {
+            "id": "ch3",
+            "title": "Capítulo 3: Organização"
+          },
+          {
+            "id": "ch4",
+            "title": "Capítulo 4: Controle de Fluxo Assíncrono"
+          },
+          {
+            "id": "ch5",
+            "title": "Capítulo 5: Coleções"
+          },
+          {
+            "id": "ch6",
+            "title": "Capítulo 6: Adições da API"
+          },
+          {
+            "id": "ch7",
+            "title": "Capítulo 7: Meta Programação"
+          },
+          {
+            "id": "ch8",
+            "title": "Capítulo 8: Além do ES6"
+          }
+        ]
+      },
+      {
         "id": "eloquent-js",
         "title": "Eloquent JavaScript (4ª ed., online)",
         "author": "Marijn Haverbeke",
@@ -4630,16 +4852,6 @@
         "source": "externo",
         "free": true,
         "url": "https://eloquentjavascript.net/"
-      },
-      {
-        "id": "ydkjs",
-        "title": "You Don't Know JS Yet (online)",
-        "author": "Kyle Simpson",
-        "lang": "en",
-        "category": "Complemento gratuito",
-        "source": "externo",
-        "free": true,
-        "url": "https://github.com/getify/You-Dont-Know-JS"
       },
       {
         "id": "pg-tutorial",
@@ -4731,7 +4943,16 @@
         "free": true,
         "url": "https://genai.owasp.org/llm-top-10/"
       }
-    ]
+    ],
+    "collections": {
+      "ydkjs-pt": {
+        "name": "You Don't Know JS (tradução PT-BR)",
+        "repo_url": "https://github.com/nao-sabemos-js/You-Dont-Know-JS",
+        "file_base_url": "https://github.com/nao-sabemos-js/You-Dont-Know-JS/blob/portuguese-translation/",
+        "license": "CC BY-NC-ND 3.0",
+        "note": "Pelos termos da tradução, o conteúdo não pode ser disponibilizado fora do GitHub. O DevPath só aponta para os capítulos; a leitura acontece no repositório."
+      }
+    }
   },
   "reading_plan": [
     {
@@ -4744,6 +4965,23 @@
         "C01-01",
         "C01-05",
         "C01-04"
+      ]
+    },
+    {
+      "id": "L01-4",
+      "phase": 1,
+      "book_id": "ydkjs-iniciando",
+      "role": "principal",
+      "focus": "Capítulo 1: código, expressões, operadores, valores e tipos, variáveis, blocos, condicionais, laços e funções — os assuntos desta etapa. Faça a prática do fim do capítulo sem IA.",
+      "topic_ids": [
+        "C01-03",
+        "C01-04",
+        "C01-06",
+        "C01-07",
+        "C01-08"
+      ],
+      "chapters": [
+        "ch1"
       ]
     },
     {
@@ -4770,11 +5008,57 @@
       ]
     },
     {
+      "id": "L02-6",
+      "phase": 2,
+      "book_id": "ydkjs-iniciando",
+      "role": "principal",
+      "focus": "Capítulo 2: visão geral do JavaScript — valores e tipos, comparações, variáveis, modo estrito, funções como valores e uma primeira olhada em closures e this.",
+      "topic_ids": [
+        "C02-01",
+        "C02-03"
+      ],
+      "chapters": [
+        "ch2"
+      ]
+    },
+    {
+      "id": "L02-7",
+      "phase": 2,
+      "book_id": "ydkjs-tipos",
+      "role": "principal",
+      "focus": "Capítulos 1 e 2: os tipos nativos e como strings, números, arrays e valores especiais (NaN, -0, undefined) se comportam.",
+      "topic_ids": [
+        "C02-01",
+        "C02-02",
+        "C02-06"
+      ],
+      "chapters": [
+        "ch1",
+        "ch2"
+      ]
+    },
+    {
+      "id": "L02-8",
+      "phase": 2,
+      "book_id": "ydkjs-tipos",
+      "role": "principal",
+      "focus": "Capítulos 3 e 4: objetos nativos e coerção — por que == e + surpreendem, e como prever o resultado antes de executar.",
+      "topic_ids": [
+        "C02-01",
+        "C02-02",
+        "C02-08"
+      ],
+      "chapters": [
+        "ch3",
+        "ch4"
+      ]
+    },
+    {
       "id": "L02-1",
       "phase": 2,
       "book_id": "eloquent-js",
-      "role": "principal",
-      "focus": "Capítulos de valores e tipos, estrutura do programa, funções e estruturas de dados. Faça os exercícios do fim de cada capítulo sem IA.",
+      "role": "consulta",
+      "focus": "Prática extra em inglês: use os exercícios do fim dos capítulos de funções e estruturas de dados quando quiser mais treino.",
       "topic_ids": [
         "C02-01",
         "C02-02",
@@ -4793,6 +5077,22 @@
         "C02-03",
         "C02-04",
         "C02-11"
+      ]
+    },
+    {
+      "id": "L02-9",
+      "phase": 2,
+      "book_id": "ydkjs-es6",
+      "role": "apoio",
+      "focus": "Capítulos 2 e 5: sintaxe moderna (destructuring, spread, parâmetros padrão, arrow functions, template strings) e coleções (Map, Set).",
+      "topic_ids": [
+        "C02-03",
+        "C02-05",
+        "C02-06"
+      ],
+      "chapters": [
+        "ch2",
+        "ch5"
       ]
     },
     {
@@ -4831,21 +5131,75 @@
     {
       "id": "L03-1",
       "phase": 3,
-      "book_id": "ydkjs",
+      "book_id": "ydkjs-escopos",
       "role": "principal",
-      "focus": "Livro \"Scope & Closures\": escopo léxico, closures e módulos — por que funções \"lembram\" variáveis.",
+      "focus": "Capítulos 1 a 5: o que é escopo, escopo léxico, função vs. bloco, hoisting e closures — por que funções \"lembram\" variáveis.",
       "topic_ids": [
         "C03-02",
         "C03-03",
         "C03-06"
+      ],
+      "chapters": [
+        "ch1",
+        "ch2",
+        "ch3",
+        "ch4",
+        "ch5"
+      ]
+    },
+    {
+      "id": "L03-5",
+      "phase": 3,
+      "book_id": "ydkjs-this",
+      "role": "principal",
+      "focus": "Capítulos 1 e 2: as quatro regras que definem o this e como identificar o call-site.",
+      "topic_ids": [
+        "C03-03"
+      ],
+      "chapters": [
+        "ch1",
+        "ch2"
+      ]
+    },
+    {
+      "id": "L03-6",
+      "phase": 3,
+      "book_id": "ydkjs-this",
+      "role": "principal",
+      "focus": "Capítulos 3 a 6 e Apêndice A: objetos, a ilusão das \"classes\", a cadeia de protótipos, delegação e o que class do ES6 realmente faz.",
+      "topic_ids": [
+        "C03-04"
+      ],
+      "chapters": [
+        "ch3",
+        "ch4",
+        "ch5",
+        "ch6",
+        "apA"
+      ]
+    },
+    {
+      "id": "L03-7",
+      "phase": 3,
+      "book_id": "ydkjs-async",
+      "role": "principal",
+      "focus": "Capítulos 1 a 3: o event loop, os problemas dos callbacks e como Promises resolvem inversão de controle.",
+      "topic_ids": [
+        "C03-07",
+        "C03-08"
+      ],
+      "chapters": [
+        "ch1",
+        "ch2",
+        "ch3"
       ]
     },
     {
       "id": "L03-2",
       "phase": 3,
       "book_id": "eloquent-js",
-      "role": "principal",
-      "focus": "Capítulos sobre objetos e classes, bugs e erros, e programação assíncrona.",
+      "role": "consulta",
+      "focus": "Prática extra em inglês: capítulos sobre objetos e classes, bugs e erros e programação assíncrona.",
       "topic_ids": [
         "C03-04",
         "C03-06",
@@ -4874,6 +5228,20 @@
       "topic_ids": [
         "C03-09",
         "C03-11"
+      ]
+    },
+    {
+      "id": "L03-8",
+      "phase": 3,
+      "book_id": "ydkjs-es6",
+      "role": "apoio",
+      "focus": "Capítulo 3: organização de código com módulos ES6, classes e iteradores.",
+      "topic_ids": [
+        "C03-04",
+        "C03-06"
+      ],
+      "chapters": [
+        "ch3"
       ]
     },
     {
@@ -5107,6 +5475,20 @@
       "topic_ids": [
         "C07-08",
         "C07-06"
+      ]
+    },
+    {
+      "id": "L07-7",
+      "phase": 7,
+      "book_id": "ydkjs-async",
+      "role": "apoio",
+      "focus": "Capítulos 4 e 5: geradores, controle de fluxo assíncrono e desempenho (workers e paralelismo).",
+      "topic_ids": [
+        "C07-08"
+      ],
+      "chapters": [
+        "ch4",
+        "ch5"
       ]
     },
     {
@@ -5571,7 +5953,7 @@
   "library_gaps": [
     {
       "area": "JavaScript como linguagem",
-      "suggestion": "A biblioteca não tem um livro de JavaScript. Complementos gratuitos: Eloquent JavaScript e You Don't Know JS Yet."
+      "suggestion": "A BibliotecaDev não tem um livro de JavaScript. A trilha usa a série You Don't Know JS em português (tradução da comunidade nao-sabemos-js, lida no GitHub) e o Eloquent JavaScript como prática extra."
     },
     {
       "area": "SQL e PostgreSQL",

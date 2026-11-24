@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import { BookMarked, Check, CheckCircle2, ChevronDown, ExternalLink, Flag, Lock, Plus, Search } from 'lucide-react';
 import { TRACKS, type StudyTopic, type Track } from '@/lib/model';
-import { PHASES, bookById, bookUrl, readingForTopic } from '@/lib/trail';
+import { PHASES, bookById, bookUrl, readingForTopic, type Book } from '@/lib/trail';
 import { codeIndex, currentPhase, isUnlocked, phaseProgress, type PhaseProgress } from '@/lib/planner';
 import { guideFor } from '@/lib/exercises';
 import { IconTrack, niceDate, phaseLabel, statusText } from './ui';
@@ -14,6 +14,7 @@ interface Handlers {
   onStudy: (t: StudyTopic) => void;
   onGuided: (t: StudyTopic) => void;
   onToggle: (t: StudyTopic) => void;
+  onRead: (book: Book) => void;
 }
 
 const isTrail = (t: StudyTopic) => t.kind === 'core' || t.kind === 'checkpoint';
@@ -125,7 +126,7 @@ function phaseStateText(pr: PhaseProgress | undefined, isCurrent: boolean): stri
   return `${isCurrent ? 'etapa atual · ' : ''}faltam ${pr.requiredLeft} para o desafio`;
 }
 
-function TopicRow({ topic: t, locked, progress, onStudy, onGuided, onToggle }: Handlers & { topic: StudyTopic; locked: boolean; progress?: PhaseProgress }) {
+function TopicRow({ topic: t, locked, progress, onStudy, onGuided, onToggle, onRead }: Handlers & { topic: StudyTopic; locked: boolean; progress?: PhaseProgress }) {
   const guide = guideFor(t);
   const books = [...new Map(readingForTopic(t.code).map(r => [r.book_id, bookById(r.book_id)])).values()].filter(b => b !== undefined);
   const lockText = t.kind === 'checkpoint' && progress?.unlocked
@@ -142,7 +143,9 @@ function TopicRow({ topic: t, locked, progress, onStudy, onGuided, onToggle }: H
       <strong>{t.title}</strong>
       <small>{t.description}</small>
       {t.practice && <small className="topic-practice"><b>Prática:</b> {t.practice}</small>}
-      {books.length > 0 && <div className="topic-books"><BookMarked size={13} />{books.map(b => <a key={b.id} href={bookUrl(b)} target="_blank" rel="noopener noreferrer">{b.title}</a>)}</div>}
+      {books.length > 0 && <div className="topic-books"><BookMarked size={13} />{books.map(b => b.source === 'bibliotecadev'
+        ? <button type="button" key={b.id} className="as-link" onClick={() => onRead(b)} title="Abrir no leitor do DevPath">{b.title}</button>
+        : <a key={b.id} href={bookUrl(b)} target="_blank" rel="noopener noreferrer" title={b.source === 'ydkjs-pt' ? 'Abre no GitHub' : undefined}>{b.title}</a>)}</div>}
     </div>
     <div className="topic-mid">
       <span className={`status-pill ${t.status}`}>{statusText(t.status)}</span>

@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { TRAIL, PHASES, catalogRows, planTrailSync, weeklyReading, isoWeek, careerBookOfWeek, bookUrl, bookById, readingForTopic, upcomingClasses } from '../src/lib/trail.ts';
+import { TRAIL, PHASES, YDKJS, catalogRows, planTrailSync, weeklyReading, isoWeek, careerBookOfWeek, bookUrl, bookById, readingForTopic, upcomingClasses, chapterUrl, chapterTitle, pdfRawUrl } from '../src/lib/trail.ts';
 import { planDay, currentPhase, phaseProgress, isUnlocked, codeIndex, weekday } from '../src/lib/planner.ts';
 
 const topics = TRAIL.topics;
@@ -86,6 +86,39 @@ test('livros: plano aponta para livros e conteúdos existentes, com links válid
   assert.equal(bookUrl(bookById('eloquent-js')), 'https://eloquentjavascript.net/');
   for (const id of TRAIL.career_rotation) assert.ok(bookById(id), id);
   assert.ok(readingForTopic('C04-01').length >= 1);
+});
+
+test("You Don't Know JS em português: 6 livros, capítulos válidos e só links para o GitHub", () => {
+  const ydkjs = TRAIL.library.books.filter(b => b.source === 'ydkjs-pt');
+  assert.deepEqual(ydkjs.map(b => b.dir), ['up & going', 'types & grammar', 'scope & closures', 'this & object prototypes', 'async & performance', 'es6 & beyond']);
+  for (const b of ydkjs) {
+    assert.equal(b.lang, 'pt');
+    assert.ok(b.chapters.length >= 3, b.id);
+    for (const c of b.chapters) assert.match(c.id, /^(ch\d|ap[A-D])$/, `${b.id}/${c.id}`);
+    assert.equal(pdfRawUrl(b), undefined, 'a tradução não pode ser renderizada fora do GitHub');
+  }
+  const withChapters = TRAIL.reading_plan.filter(r => r.chapters?.length);
+  assert.ok(withChapters.length >= 10);
+  for (const r of withChapters) {
+    const b = bookById(r.book_id);
+    assert.equal(b.source, 'ydkjs-pt', r.id);
+    for (const c of r.chapters) assert.ok(b.chapters.some(x => x.id === c), `${r.id}: ${c}`);
+  }
+  const escopos = bookById('ydkjs-escopos');
+  assert.equal(chapterUrl(escopos, 'ch5'), 'https://github.com/nao-sabemos-js/You-Dont-Know-JS/blob/portuguese-translation/scope%20%26%20closures/ch5.md');
+  assert.equal(chapterTitle(escopos, 'ch5'), 'Capítulo 5: Closures de Escopo');
+  assert.equal(bookUrl(escopos), YDKJS.file_base_url + 'scope%20%26%20closures/README.md');
+  assert.equal(bookById('ydkjs'), undefined, 'versão em inglês substituída pela tradução');
+  assert.equal(TRAIL.reading_plan.find(r => r.id === 'L03-1').book_id, 'ydkjs-escopos', 'ID de semana preservado');
+});
+
+test('leitor do app: só PDFs da BibliotecaDev, pelo endereço raw do GitHub', () => {
+  const pdf = pdfRawUrl(bookById('entendendo-algoritmos'));
+  assert.ok(pdf.startsWith('https://raw.githubusercontent.com/EnzoOliveiradev/BibliotecaDev/main/LivrosDev/'));
+  assert.ok(!pdf.includes(' '), 'sem espaços');
+  assert.ok(pdf.endsWith('.pdf'));
+  assert.equal(pdfRawUrl(bookById('eloquent-js')), undefined);
+  for (const b of TRAIL.library.books.filter(b => b.source === 'bibliotecadev')) assert.ok(pdfRawUrl(b), b.id);
 });
 
 // ---------- Sincronização com o banco ----------
@@ -190,12 +223,12 @@ test('livro da semana: leitura em andamento, depois a primeira aberta da etapa a
   const progress = new Map();
   assert.equal(weeklyReading(1, progress).id, 'L01-1');
   progress.set('L01-1', 'done');
-  assert.equal(weeklyReading(1, progress).id, 'L01-2');
+  assert.equal(weeklyReading(1, progress).id, 'L01-4', 'segue a ordem do plano, não o número do ID');
   progress.set('L02-3', 'reading');
   assert.equal(weeklyReading(1, progress).id, 'L02-3');
   progress.delete('L02-3');
   for (const r of TRAIL.reading_plan.filter(r => r.phase === 4)) progress.set(r.id, 'done');
-  assert.equal(weeklyReading(4, progress).id, 'L01-2', 'etapa lida: volta às pendentes anteriores');
+  assert.equal(weeklyReading(4, progress).id, 'L01-4', 'etapa lida: volta às pendentes anteriores');
   assert.notEqual(weeklyReading(4, progress).role, 'consulta');
 });
 

@@ -1,11 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { BookMarked, BookOpenCheck, Check, ChevronDown, ExternalLink, Library, Undo2 } from 'lucide-react';
-import { PHASES, TRAIL, bookById, bookUrl, careerBookOfWeek, readingForPhase, type ReadingItem, type ReadingStatus } from '@/lib/trail';
+import { BookMarked, BookOpen, BookOpenCheck, Check, ChevronDown, ExternalLink, Library, Undo2 } from 'lucide-react';
+import { PHASES, TRAIL, YDKJS, bookById, bookUrl, careerBookOfWeek, chapterTitle, chapterUrl, readingForPhase, type Book, type ReadingItem, type ReadingStatus } from '@/lib/trail';
 import { phaseLabel } from './ui';
 
 export type SetReading = (itemId: string, status: ReadingStatus | null) => void;
+export type OpenBook = (book: Book) => void;
 const ROLE = { principal: 'Principal', apoio: 'Apoio', consulta: 'Consulta' } as const;
 
 function BookMeta({ item }: { item: ReadingItem }) {
@@ -15,8 +16,35 @@ function BookMeta({ item }: { item: ReadingItem }) {
     {book.author}
     {book.lang === 'en' && <span className="soft-chip">inglês</span>}
     {book.source === 'externo' && <span className="soft-chip free">gratuito online</span>}
+    {book.source === 'ydkjs-pt' && <span className="soft-chip free">PT-BR · GitHub</span>}
     <span className={`role-chip ${item.role}`}>{ROLE[item.role]}</span>
   </span>;
+}
+
+/** Título do livro: PDFs da BibliotecaDev abrem no leitor do app; os demais, em nova aba. */
+function BookTitle({ book, onRead, className }: { book: Book; onRead: OpenBook; className: string }) {
+  if (book.source === 'bibliotecadev') {
+    return <button type="button" className={`${className} as-link`} onClick={() => onRead(book)}>{book.title} <BookOpen size={13} /></button>;
+  }
+  return <a className={className} href={bookUrl(book)} target="_blank" rel="noopener noreferrer">{book.title} <ExternalLink size={13} /></a>;
+}
+
+/** Como ler este item: leitor do app (PDF) ou links dos capítulos (YDKJS no GitHub). */
+function ReadLinks({ item, onRead }: { item: ReadingItem; onRead: OpenBook }) {
+  const book = bookById(item.book_id);
+  if (!book) return null;
+  if (book.source === 'bibliotecadev') {
+    return <button type="button" className="btn secondary small read-button" onClick={() => onRead(book)}><BookOpen size={14} /> Ler no app</button>;
+  }
+  if (book.source === 'ydkjs-pt' && item.chapters?.length) {
+    return <div className="chapter-links">
+      {item.chapters.map(id => <a key={id} href={chapterUrl(book, id)} target="_blank" rel="noopener noreferrer" title={chapterTitle(book, id)}>
+        {chapterTitle(book, id).split(':')[0]} <ExternalLink size={11} />
+      </a>)}
+      <small>abre no GitHub</small>
+    </div>;
+  }
+  return null;
 }
 
 function ReadingActions({ item, status, onSet, ready }: { item: ReadingItem; status?: ReadingStatus; onSet: SetReading; ready: boolean }) {
@@ -29,27 +57,28 @@ function ReadingActions({ item, status, onSet, ready }: { item: ReadingItem; sta
 }
 
 /** Card do livro da semana (painel e biblioteca). */
-export function WeeklyReadingCard({ item, status, onSet, ready, today, onOpenLibrary }: {
-  item?: ReadingItem; status?: ReadingStatus; onSet: SetReading; ready: boolean; today: string; onOpenLibrary?: () => void;
+export function WeeklyReadingCard({ item, status, onSet, onRead, ready, today, onOpenLibrary }: {
+  item?: ReadingItem; status?: ReadingStatus; onSet: SetReading; onRead: OpenBook; ready: boolean; today: string; onOpenLibrary?: () => void;
 }) {
   const career = careerBookOfWeek(today);
   const book = item ? bookById(item.book_id) : undefined;
   return <div className="reading-card">
     <div className="reading-head"><div className="reading-icon"><Library size={19} /></div><div><div className="eyebrow">LIVRO DA SEMANA{item ? ` · ${phaseLabel(item.phase).toUpperCase()}` : ''}</div>{status === 'reading' && <span className="reading-badge">lendo agora</span>}</div></div>
     {item && book ? <>
-      <a className="reading-title" href={bookUrl(book)} target="_blank" rel="noopener noreferrer">{book.title} <ExternalLink size={13} /></a>
+      <BookTitle className="reading-title" book={book} onRead={onRead} />
       <BookMeta item={item} />
       <p className="reading-focus">{item.focus}</p>
+      <ReadLinks item={item} onRead={onRead} />
       <div className="reading-topics">{item.topic_ids.map(id => <span key={id} className="code-chip">{id}</span>)}</div>
       <ReadingActions item={item} status={status} onSet={onSet} ready={ready} />
     </> : <p className="reading-focus">Todas as leituras da trilha foram concluídas. Revise as anotações dos livros principais.</p>}
-    {career && <div className="career-line"><BookOpenCheck size={14} /><span>Leitura leve da semana: <a href={bookUrl(career)} target="_blank" rel="noopener noreferrer">{career.title}</a> — {career.author}</span></div>}
+    {career && <div className="career-line"><BookOpenCheck size={14} /><span>Leitura leve da semana: <button type="button" className="as-link" onClick={() => onRead(career)}>{career.title}</button> — {career.author}</span></div>}
     {onOpenLibrary && <button className="btn text small" onClick={onOpenLibrary}>Ver todas as leituras <ChevronDown size={14} style={{ transform: 'rotate(-90deg)' }} /></button>}
   </div>;
 }
 
-export function LibraryView({ today, phase, weekly, progress, ready, onSet }: {
-  today: string; phase: number | null; weekly?: ReadingItem; progress: Map<string, ReadingStatus>; ready: boolean; onSet: SetReading;
+export function LibraryView({ today, phase, weekly, progress, ready, onSet, onRead }: {
+  today: string; phase: number | null; weekly?: ReadingItem; progress: Map<string, ReadingStatus>; ready: boolean; onSet: SetReading; onRead: OpenBook;
 }) {
   const [toggled, setToggled] = useState<Set<number>>(() => new Set());
   const all = TRAIL.reading_plan.filter(r => r.phase > 0 && r.role !== 'consulta');
@@ -69,12 +98,13 @@ export function LibraryView({ today, phase, weekly, progress, ready, onSet }: {
     </section>
     {!ready && <div className="info-banner">Para salvar o progresso de leitura, execute <code>supabase/v3_trilha.sql</code> no SQL Editor do Supabase.</div>}
     <section className="library-top">
-      <WeeklyReadingCard item={weekly} status={weekly ? progress.get(weekly.id) : undefined} onSet={onSet} ready={ready} today={today} />
+      <WeeklyReadingCard item={weekly} status={weekly ? progress.get(weekly.id) : undefined} onSet={onSet} onRead={onRead} ready={ready} today={today} />
       <div className="mini-panel">
         <h3>Progresso de leitura</h3>
         <div className="library-count"><strong>{done}</strong><span>de {all.length} semanas de leitura concluídas</span></div>
         <div className="progress-track"><span style={{ width: `${all.length ? (done / all.length) * 100 : 0}%` }} /></div>
         <p className="mini-caption"><b>Principal</b> sustenta a etapa, <b>apoio</b> amplia e <b>consulta</b> serve para tirar dúvidas (não entra no livro da semana).</p>
+        <p className="mini-caption"><b>Onde ler:</b> os PDFs da BibliotecaDev abrem no leitor do app, direto do seu repositório. A série <a href={YDKJS.repo_url} target="_blank" rel="noopener noreferrer">You Don&apos;t Know JS em português</a> abre no GitHub: pelos termos da tradução ({YDKJS.license}), o conteúdo não pode ser disponibilizado fora de lá.</p>
       </div>
     </section>
 
@@ -99,9 +129,10 @@ export function LibraryView({ today, phase, weekly, progress, ready, onSet }: {
               return <div key={item.id} className={`reading-row ${status ?? ''}`}>
                 <span className="code-chip">{item.id}</span>
                 <div className="reading-row-main">
-                  <a href={bookUrl(book)} target="_blank" rel="noopener noreferrer"><strong>{book.title}</strong> <ExternalLink size={12} /></a>
+                  <BookTitle className="reading-row-title" book={book} onRead={onRead} />
                   <BookMeta item={item} />
                   <p>{item.focus}</p>
+                  <ReadLinks item={item} onRead={onRead} />
                   <div className="reading-topics">{item.topic_ids.map(id => <span key={id} className="code-chip">{id}</span>)}</div>
                 </div>
                 <div className="reading-row-side">
@@ -118,7 +149,7 @@ export function LibraryView({ today, phase, weekly, progress, ready, onSet }: {
     <section className="insight-grid library-bottom">
       <div className="mini-panel">
         <h3>Leitura leve (rodízio semanal)</h3>
-        <ol className="plain-list">{TRAIL.career_rotation.map(id => { const b = bookById(id); return b && <li key={id}><a href={bookUrl(b)} target="_blank" rel="noopener noreferrer">{b.title}</a> <small>— {b.author}</small></li>; })}</ol>
+        <ol className="plain-list">{TRAIL.career_rotation.map(id => { const b = bookById(id); return b && <li key={id}><button type="button" className="as-link" onClick={() => onRead(b)}>{b.title}</button> <small>— {b.author}</small></li>; })}</ol>
       </div>
       <div className="mini-panel">
         <h3>Lacunas da biblioteca</h3>
