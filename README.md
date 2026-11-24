@@ -28,6 +28,8 @@ MVP real em **Next.js 16 + TypeScript + Supabase** pronto para publicação na *
 - **Aba Trilha:** mapa das 14 etapas, meta e critério de saída de cada uma, prática sugerida, material específico e livros relacionados em cada conteúdo. Há filtros por etapa, área e busca por código.
 - **Livros da semana (aba Biblioteca e painel):** 63 semanas de leitura ligadas às etapas, com PDFs da [BibliotecaDev](https://github.com/EnzoOliveiradev/BibliotecaDev) e complementos gratuitos onde a biblioteca tem lacunas. O painel mostra a leitura atual e uma leitura leve de carreira em rodízio semanal. O progresso fica em `reading_progress`.
 - **Sincronização:** ao entrar, o app cria ou atualiza os itens da trilha pelo ID (`code`) sem mexer em status e revisões. Assuntos antigos com o mesmo título são adotados e mantêm o histórico. Assuntos personalizados ficam fora das etapas e entram no plano quando têm prazo ou estão em andamento.
+- **Leitor de PDF no app:** os livros da BibliotecaDev abrem dentro do DevPath (botão **Ler no app** ou clique no título). O PDF vem direto do GitHub (`raw.githubusercontent.com`, com CORS liberado) e é desenhado com PDF.js; nada é copiado para o projeto. Tem navegação por página, zoom e teclado (← → e Esc), e lembra a última página lida neste navegador.
+- **You Don't Know JS em português:** os 6 livros da [tradução da comunidade](https://github.com/nao-sabemos-js/You-Dont-Know-JS) entram nas etapas 01, 02, 03 e 07, com os capítulos indicados em cada semana de leitura. Eles abrem no GitHub: a tradução é CC BY-NC-ND 3.0 e seus termos proíbem disponibilizar o conteúdo fora de lá, então o DevPath só aponta para os capítulos.
 - **Editar a trilha:** altere `trilha/devpath-trilha.json` e rode `npm run trilha:build` para regenerar `TRILHA_COMPLETA.md` e o CSV. Nunca mude o ID de um item; para reordenar, mude a ordem.
 
 **Importante:** A agenda é uma heurística transparente de priorização, não um algoritmo cientificamente validado de repetição espaçada. Métricas dependem do autorrelato do usuário. Não há geração por IA, notificações push, nem integração automática com o calendário nesta versão.
@@ -132,6 +134,7 @@ Nas sessões guiadas, a plataforma corrige os exercícios e calcula memória e a
 src/app/page.tsx              Aplicação, painel, histórico, evolução e formulários
 src/app/trail-view.tsx        Aba Trilha (etapas, portões, livros por conteúdo)
 src/app/library-view.tsx      Aba Biblioteca e card do livro da semana
+src/app/pdf-reader.tsx        Leitor de PDF (PDF.js) para os livros da BibliotecaDev
 src/app/guided-session.tsx    Sessão guiada PRIMM
 src/app/globals.css, trail.css Estilo responsivo
 src/lib/trail.ts              Trilha 2.1, sincronização e livros da semana

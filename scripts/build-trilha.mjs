@@ -10,8 +10,15 @@ const data = JSON.parse(fs.readFileSync(path.join(dir, 'devpath-trilha.json'), '
 
 const books = new Map(data.library.books.map(b => [b.id, b]));
 const topics = new Map(data.topics.map(t => [t.id, t]));
-const bookUrl = b => b.source === 'bibliotecadev' ? data.library.file_base_url + encodeURI(b.file) : b.url;
+const ydkjs = data.library.collections?.['ydkjs-pt'];
+const encodePath = p => p.split('/').map(encodeURIComponent).join('/');
+const bookUrl = b => b.source === 'bibliotecadev' ? data.library.file_base_url + encodeURI(b.file)
+  : b.source === 'ydkjs-pt' ? ydkjs.file_base_url + encodePath(`${b.dir}/README.md`) : b.url;
 const bookLink = b => `[${b.title}](${bookUrl(b)})`;
+const chapterLinks = (b, ids = []) => ids.map(id => {
+  const title = b.chapters?.find(c => c.id === id)?.title ?? id;
+  return `[${title.split(':')[0]}](${ydkjs.file_base_url + encodePath(`${b.dir}/${id}.md`)})`;
+}).join(', ');
 const dateBR = iso => iso.split('-').reverse().join('/');
 const ROLE = { principal: 'Principal', apoio: 'Apoio', consulta: 'Consulta' };
 
@@ -67,15 +74,17 @@ for (const p of data.phases) {
 }
 
 w('## Livros da semana', '',
-  `Cada linha é uma semana de leitura (cerca de 20 min/dia, 5 dias), ligada aos conteúdos da etapa. **Principal** sustenta a etapa; **Apoio** amplia; **Consulta** é para tirar dúvidas, não para ler inteiro. Os PDFs estão na [BibliotecaDev](${data.library.repo_url}); itens marcados como complemento são gratuitos e cobrem lacunas da biblioteca.`, '');
+  `Cada linha é uma semana de leitura (cerca de 20 min/dia, 5 dias), ligada aos conteúdos da etapa. **Principal** sustenta a etapa; **Apoio** amplia; **Consulta** é para tirar dúvidas, não para ler inteiro. Os PDFs estão na [BibliotecaDev](${data.library.repo_url}) e abrem no leitor do DevPath; itens marcados como complemento são gratuitos e cobrem lacunas da biblioteca.`, '',
+  ...(ydkjs ? [`A série [${ydkjs.name}](${ydkjs.repo_url}) (${ydkjs.license}) é lida no GitHub, capítulo a capítulo. Pelos termos da tradução, o conteúdo não pode ser disponibilizado fora de lá, então o DevPath só aponta para os capítulos.`, ''] : []));
 for (const p of [...data.phases, { id: 0, title: 'Pós em paralelo' }]) {
   const items = data.reading_plan.filter(r => r.phase === p.id);
   if (!items.length) continue;
   w(`### ${p.id ? `${String(p.id).padStart(2, '0')} — ` : ''}${p.title}`, '', '| Semana | Livro | Papel | Foco | Conteúdos |', '|---|---|---|---|---|');
   for (const r of items) {
     const b = books.get(r.book_id);
-    const extra = b.source === 'externo' ? ' (complemento gratuito)' : b.lang === 'en' ? ' (inglês)' : '';
-    w(`| ${r.id} | ${bookLink(b)}${extra} — ${b.author} | ${ROLE[r.role]} | ${r.focus} | ${r.topic_ids.join(', ')} |`);
+    const extra = b.source === 'externo' ? ' (complemento gratuito)' : b.source === 'ydkjs-pt' ? ' (PT-BR, GitHub)' : b.lang === 'en' ? ' (inglês)' : '';
+    const chapters = r.chapters?.length ? ` Capítulos: ${chapterLinks(b, r.chapters)}.` : '';
+    w(`| ${r.id} | ${bookLink(b)}${extra} — ${b.author} | ${ROLE[r.role]} | ${r.focus}${chapters} | ${r.topic_ids.join(', ')} |`);
   }
   w('');
 }
